@@ -1,0 +1,61 @@
+c Removed the " in the endword punctuation list as it broke words iwth " in it. Like tbw
+c may need adding for some languages. 2012-03-12
+c Ian McQuay
+begin               >                   store(endwordpunc) '.,?!;:'  
+                                        store(beginwordpunc) '{' u201C 
+                                        store(alpha) 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' "'" 
+                                        store(backbold) '</strong>' 
+                                        store(backitalic) '</em>' endstore  clear(bold) clear(italic)
+                                        use(main)
+
+group(main)
+'|r'                  >                   ''
+'>'                 >                   dup clear(bold) clear(italic)
+' |b'                  >                  ' <strong>' set(bold) use(phrase)
+' |i'                  >                  ' <em>' set(italic)  use(phrase)
+'|b'                  >                  '<strong>' set(bold) use(phrase)
+'|i'                  >                  '<em>' set(italic)  use(phrase)
+'|b|i'                >                   '<strong><em>'  set(bold) set(italic)  use(bothset)
+' |b|i'                >                   ' <strong><em>'  set(bold) set(italic)  use(bothset)
+'|i|b'                >                   '<strong><em>' set(bold) set(italic)   use(bothset)
+' |i |b'                >                   '<strong><em>' set(bold) set(italic)   use(bothset)
+' |i|b'                >                   ' <strong><em>' set(bold) set(italic)   use(bothset)
+'_' fol(alpha)                 >          '<strong>' set(bold) use(phrase) 
+' +' fol(alpha)      >                     ' <strong>' set(bold) use(word)
+prec(alpha) '+' fol(alpha)      >           '<strong>' set(bold) use(word)
+prec(beginwordpunc) '+' fol(alpha)      >   '<strong>' set(bold) use(word)
+' +(' fol(alpha)      >                     ' (' 
+'>+' fol(alpha)      >                     '><strong>' set(bold) use(word)
+c '(+' fol(alpha)      >                     '(<strong>' set(bold) use(word)
+' + '                >                   dup
+
+group(word)
+'<'                   >                   if(bold) begin out(backbold) clear(bold) end dup use(main)
+' '                  >                    if(bold) begin out(backbold) clear(bold) end dup back(1) use(main)
+'|r'                  >                   if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end  use(main)
+any(endwordpunc)                  >       if(bold) begin out(backbold) clear(bold) end dup use(main)
+
+group(phrase)
+'|r'                  >                   if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end  use(main)
+'|i'                  >                   ifn(italic) begin '<em>'  set(italic) end
+prec(alpha) '_'       >                   if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end  use(main)
+prec(alpha) '|_'      >                   if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end  use(main)
+'<'                   >                   if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end  dup clear(bold) clear(italic) use(main)
+'|b'                >                     if(italic) begin
+                                                            ifn(bold) begin out(backitalic) '<strong><em>'  set(bold) end
+                                          else
+                                          '<strong>' set(bold)
+                                          end
+group(bothset)
+'|r'                  >                   if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end  use(main)
+
+
+c group(enditalic)
+c '|r'                  >                    if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end use(main)
+c '|i'                  >                   ''
+c '|b'                >                     '<strong>' set(bold)
+c '<'                   >                    if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end dup use(main)
+c 
+c group(enditbold)
+c '|r'                  >                    if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end use(main)
+c '<'                   >                    if(italic) begin out(backitalic) clear(italic) end if(bold) begin out(backbold) clear(bold) end  dup use(main)

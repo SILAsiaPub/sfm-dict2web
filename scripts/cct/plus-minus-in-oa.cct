@@ -1,0 +1,8 @@
+begin >     use(main)
+
+group(main)
+'<oa>'              >                   dup use(infield)
+
+group(infield)
+'</oa>'             >                   dup use(main)
+'+/-'               >                   '<normal>' dup '</normal>'

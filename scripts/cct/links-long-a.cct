@@ -1,0 +1,14 @@
+begin               >                   use(main)
+
+group(main)
+'prec('             >                   incr(lines) 
+                                        ifgt(lines) '15000'
+                                        begin
+                                         store(nul) use(tail)
+                                        end
+                                        dup
+endfile             >                   endstore dup 
+
+group(tail)
+'prec('             >                   store(nul)
+endfile             >                   nl nl dup

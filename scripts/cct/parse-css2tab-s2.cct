@@ -1,0 +1,11 @@
+begin >     store(sel) use(first)
+
+group(first)
+d9                  >                   endstore out(sel) dup use(main)
+
+group(rest)
+d9                  >                   endstore out(sel) dup use(main)
+
+group(main)
+nl d9               >                   nl out(sel) d9
+nl                  >                   dup store(sel) use(rest)

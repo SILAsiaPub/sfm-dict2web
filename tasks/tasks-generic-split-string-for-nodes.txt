@@ -1,0 +1,1 @@
+xslt generic-split-string-for-nodes "spacedlist='ps' separatorstring='/'" D:\All-SIL-PLB\WebMaster\Publishing\Dict-svn\data\%iso%\xml\%iso%-serialGroup.xml 

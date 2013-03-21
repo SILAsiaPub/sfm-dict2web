@@ -1,0 +1,9 @@
+begin               >                   use(main)
+
+group(main)
+'<FONT'             >                   store(nul) use(strip)
+'</FONT'            >                   store(nul) use(strip)
+
+
+group(strip)
+'>'                 >                   endstore use(main)

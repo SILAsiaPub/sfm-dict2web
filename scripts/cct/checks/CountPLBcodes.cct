@@ -1,0 +1,474 @@
+begin	>	store(nul)
+		store(a) "0"
+		store(ad) "0"
+		store(ar) "0"
+		store(co) "0"
+		store(d1) "0"
+		store(d10) "0"
+		store(d2) "0"
+		store(d3) "0"
+		store(d4) "0"
+		store(d5) "0"
+		store(d6) "0"
+		store(d7) "0"
+		store(d8) "0"
+		store(d9) "0"
+		store(da) "0"
+		store(dc) "0"
+		store(dch) "0"
+		store(dd1) "0"
+		store(dd2) "0"
+		store(dd3) "0"
+		store(de) "0"
+		store(df) "0"
+		store(di) "0"
+		store(dm) "0"
+		store(dq) "0"
+		store(ds) "0"
+		store(dt) "0"
+		store(ec) "0"
+		store(eg) "0"
+		store(es) "0"
+		store(ex) "0"
+		store(g2) "0"
+		store(g3) "0"
+		store(gl) "0"
+		store(gm) "0"
+		store(gs) "0"
+		store(h) "0"
+		store(ic) "0"
+		store(id) "0"
+		store(id1) "0"
+		store(id2) "0"
+		store(id3) "0"
+		store(ie) "0"
+		store(ii) "0"
+		store(im) "0"
+		store(it) "0"
+		store(l2) "0"
+		store(l3) "0"
+		store(lc) "0"
+		store(lcc) "0"
+		store(ld) "0"
+		store(lde) "0"
+		store(lg) "0"
+		store(li) "0"
+		store(lid) "0"
+		store(lk) "0"
+		store(ls) "0"
+		store(lse) "0"
+		store(lx) "0"
+		store(mb) "0"
+		store(md1) "0"
+		store(md2) "0"
+		store(md3) "0"
+		store(mo) "0"
+		store(mr) "0"
+		store(ms) "0"
+		store(mt) "0"
+		store(oa) "0"
+		store(oc) "0"
+		store(occ) "0"
+		store(od) "0"
+		store(ode) "0"
+		store(oi) "0"
+		store(oid) "0"
+		store(op) "0"
+		store(or) "0"
+		store(os) "0"
+		store(ose) "0"
+		store(pn) "0"
+		store(pra) "0"
+		store(prd) "0"
+		store(pri) "0"
+		store(prm) "0"
+		store(prn) "0"
+		store(prno) "0"
+		store(pro) "0"
+		store(prp) "0"
+		store(prs) "0"
+		store(ps) "0"
+		store(ra) "0"
+		store(re) "0"
+		store(rf) "0"
+		store(rg) "0"
+		store(rm) "0"
+		store(ro) "0"
+		store(rs) "0"
+		store(rt) "0"
+		store(rx) "0"
+		store(sc) "0"
+		store(sg) "0"
+		store(sk) "0"
+		store(sn) "0"
+		store(sp) "0"
+		store(st) "0"
+		store(t2) "0"
+		store(t3) "0"
+		store(tb) "0"
+		store(tn) "0"
+		store(tr) "0"
+		store(u) "0"
+		store(ud) "0"
+		store(va) "0"
+		store(vd1) "0"
+		store(vd2) "0"
+		store(vd3) "0"
+		store(nul)
+		clear(xa)
+		clear(xad)
+		clear(xar)
+		clear(xco)
+		clear(xd1)
+		clear(xd10)
+		clear(xd2)
+		clear(xd3)
+		clear(xd4)
+		clear(xd5)
+		clear(xd6)
+		clear(xd7)
+		clear(xd8)
+		clear(xd9)
+		clear(xda)
+		clear(xdc)
+		clear(xdch)
+		clear(xdd1)
+		clear(xdd2)
+		clear(xdd3)
+		clear(xde)
+		clear(xdf)
+		clear(xdi)
+		clear(xdm)
+		clear(xdq)
+		clear(xds)
+		clear(xdt)
+		clear(xec)
+		clear(xeg)
+		clear(xes)
+		clear(xex)
+		clear(xg2)
+		clear(xg3)
+		clear(xgl)
+		clear(xgm)
+		clear(xgs)
+		clear(xh)
+		clear(xic)
+		clear(xid)
+		clear(xid1)
+		clear(xid2)
+		clear(xid3)
+		clear(xie)
+		clear(xii)
+		clear(xim)
+		clear(xit)
+		clear(xl2)
+		clear(xl3)
+		clear(xlc)
+		clear(xlcc)
+		clear(xld)
+		clear(xlde)
+		clear(xlg)
+		clear(xli)
+		clear(xlid)
+		clear(xlk)
+		clear(xls)
+		clear(xlse)
+		clear(xlx)
+		clear(xmb)
+		clear(xmd1)
+		clear(xmd2)
+		clear(xmd3)
+		clear(xmo)
+		clear(xmr)
+		clear(xms)
+		clear(xmt)
+		clear(xoa)
+		clear(xoc)
+		clear(xocc)
+		clear(xod)
+		clear(xode)
+		clear(xoi)
+		clear(xoid)
+		clear(xop)
+		clear(xor)
+		clear(xos)
+		clear(xose)
+		clear(xpn)
+		clear(xpra)
+		clear(xprd)
+		clear(xpri)
+		clear(xprm)
+		clear(xprn)
+		clear(xprno)
+		clear(xpro)
+		clear(xprp)
+		clear(xprs)
+		clear(xps)
+		clear(xra)
+		clear(xre)
+		clear(xrf)
+		clear(xrg)
+		clear(xrm)
+		clear(xro)
+		clear(xrs)
+		clear(xrt)
+		clear(xrx)
+		clear(xsc)
+		clear(xsg)
+		clear(xsk)
+		clear(xsn)
+		clear(xsp)
+		clear(xst)
+		clear(xt2)
+		clear(xt3)
+		clear(xtb)
+		clear(xtn)
+		clear(xtr)
+		clear(xu)
+		clear(xud)
+		clear(xva)
+		clear(xvd1)
+		clear(xvd2)
+		clear(xvd3)
+		use(main)
+
+
+
+group(main)
+'\a '	>	dup incr(a) set(xa) 
+'\ad '	>	dup incr(ad) set(xad) 
+'\ar '	>	dup incr(ar) set(xar) 
+'\co '	>	dup incr(co) set(xco) 
+'\d1 '	>	dup incr(d1) set(xd1) 
+'\d10 '	>	dup incr(d10) set(xd10) 
+'\d2 '	>	dup incr(d2) set(xd2) 
+'\d3 '	>	dup incr(d3) set(xd3) 
+'\d4 '	>	dup incr(d4) set(xd4) 
+'\d5 '	>	dup incr(d5) set(xd5) 
+'\d6 '	>	dup incr(d6) set(xd6) 
+'\d7 '	>	dup incr(d7) set(xd7) 
+'\d8 '	>	dup incr(d8) set(xd8) 
+'\d9 '	>	dup incr(d9) set(xd9) 
+'\da '	>	dup incr(da) set(xda) 
+'\dc '	>	dup incr(dc) set(xdc) 
+'\dch '	>	dup incr(dch) set(xdch) 
+'\dd1 '	>	dup incr(dd1) set(xdd1) 
+'\dd2 '	>	dup incr(dd2) set(xdd2) 
+'\dd3 '	>	dup incr(dd3) set(xdd3) 
+'\de '	>	dup incr(de) set(xde) 
+'\df '	>	dup incr(df) set(xdf) 
+'\di '	>	dup incr(di) set(xdi) 
+'\dm '	>	dup incr(dm) set(xdm) 
+'\dq '	>	dup incr(dq) set(xdq) 
+'\ds '	>	dup incr(ds) set(xds) 
+'\dt '	>	dup incr(dt) set(xdt) 
+'\ec '	>	dup incr(ec) set(xec) 
+'\eg '	>	dup incr(eg) set(xeg) 
+'\es '	>	dup incr(es) set(xes) 
+'\ex '	>	dup incr(ex) set(xex) 
+'\g2 '	>	dup incr(g2) set(xg2) 
+'\g3 '	>	dup incr(g3) set(xg3) 
+'\gl '	>	dup incr(gl) set(xgl) 
+'\gm '	>	dup incr(gm) set(xgm) 
+'\gs '	>	dup incr(gs) set(xgs) 
+'\h '	>	dup incr(h) set(xh) 
+'\ic '	>	dup incr(ic) set(xic) 
+'\id '	>	dup incr(id) set(xid) 
+'\id1 '	>	dup incr(id1) set(xid1) 
+'\id2 '	>	dup incr(id2) set(xid2) 
+'\id3 '	>	dup incr(id3) set(xid3) 
+'\ie '	>	dup incr(ie) set(xie) 
+'\ii '	>	dup incr(ii) set(xii) 
+'\im '	>	dup incr(im) set(xim) 
+'\it '	>	dup incr(it) set(xit) 
+'\l2 '	>	dup incr(l2) set(xl2) 
+'\l3 '	>	dup incr(l3) set(xl3) 
+'\lc '	>	dup incr(lc) set(xlc) 
+'\lcc '	>	dup incr(lcc) set(xlcc) 
+'\ld '	>	dup incr(ld) set(xld) 
+'\lde '	>	dup incr(lde) set(xlde) 
+'\lg '	>	dup incr(lg) set(xlg) 
+'\li '	>	dup incr(li) set(xli) 
+'\lid '	>	dup incr(lid) set(xlid) 
+'\lk '	>	dup incr(lk) set(xlk) 
+'\ls '	>	dup incr(ls) set(xls) 
+'\lse '	>	dup incr(lse) set(xlse) 
+'\lx '	>	dup incr(lx) set(xlx) store(nul)
+'\mb '	>	dup incr(mb) set(xmb) 
+'\md1 '	>	dup incr(md1) set(xmd1) 
+'\md2 '	>	dup incr(md2) set(xmd2) 
+'\md3 '	>	dup incr(md3) set(xmd3) 
+'\mo '	>	dup incr(mo) set(xmo) 
+'\mr '	>	dup incr(mr) set(xmr) 
+'\ms '	>	dup incr(ms) set(xms) 
+'\mt '	>	dup incr(mt) set(xmt) 
+'\oa '	>	dup incr(oa) set(xoa) 
+'\oc '	>	dup incr(oc) set(xoc) 
+'\occ '	>	dup incr(occ) set(xocc) 
+'\od '	>	dup incr(od) set(xod) 
+'\ode '	>	dup incr(ode) set(xode) 
+'\oi '	>	dup incr(oi) set(xoi) 
+'\oid '	>	dup incr(oid) set(xoid) 
+'\op '	>	dup incr(op) set(xop) 
+'\or '	>	dup incr(or) set(xor) 
+'\os '	>	dup incr(os) set(xos) 
+'\ose '	>	dup incr(ose) set(xose) 
+'\pn '	>	dup incr(pn) set(xpn) 
+'\pra '	>	dup incr(pra) set(xpra) 
+'\prd '	>	dup incr(prd) set(xprd) 
+'\pri '	>	dup incr(pri) set(xpri) 
+'\prm '	>	dup incr(prm) set(xprm) 
+'\prn '	>	dup incr(prn) set(xprn) 
+'\prno '	>	dup incr(prno) set(xprno) 
+'\pro '	>	dup incr(pro) set(xpro) 
+'\prp '	>	dup incr(prp) set(xprp) 
+'\prs '	>	dup incr(prs) set(xprs) 
+'\ps '	>	dup incr(ps) set(xps) 
+'\ra '	>	dup incr(ra) set(xra) 
+'\re '	>	dup incr(re) set(xre) 
+'\rf '	>	dup incr(rf) set(xrf) 
+'\rg '	>	dup incr(rg) set(xrg) 
+'\rm '	>	dup incr(rm) set(xrm) 
+'\ro '	>	dup incr(ro) set(xro) 
+'\rs '	>	dup incr(rs) set(xrs) 
+'\rt '	>	dup incr(rt) set(xrt) 
+'\rx '	>	dup incr(rx) set(xrx) 
+'\sc '	>	dup incr(sc) set(xsc) 
+'\sg '	>	dup incr(sg) set(xsg) 
+'\sk '	>	dup incr(sk) set(xsk) 
+'\sn '	>	dup incr(sn) set(xsn) 
+'\sp '	>	dup incr(sp) set(xsp) 
+'\st '	>	dup incr(st) set(xst) 
+'\t2 '	>	dup incr(t2) set(xt2) 
+'\t3 '	>	dup incr(t3) set(xt3) 
+'\tb '	>	dup incr(tb) set(xtb) 
+'\tn '	>	dup incr(tn) set(xtn) 
+'\tr '	>	dup incr(tr) set(xtr) 
+'\u '	>	dup incr(u) set(xu) 
+'\ud '	>	dup incr(ud) set(xud) 
+'\va '	>	dup incr(va) set(xva) 
+'\vd1 '	>	dup incr(vd1) set(xvd1) 
+'\vd2 '	>	dup incr(vd2) set(xvd2) 
+'\vd3 '	>	dup incr(vd3) set(xvd3) 
+endfile	>	endstore dup back Use(end)
+
+
+
+group(end)
+
+endfile	> dup
+		if(xa) "a" tab out(a) nl endif
+		if(xad) "ad" tab out(ad) nl endif
+		if(xar) "ar" tab out(ar) nl endif
+		if(xco) "co" tab out(co) nl endif
+		if(xd1) "d1" tab out(d1) nl endif
+		if(xd10) "d10" tab out(d10) nl endif
+		if(xd2) "d2" tab out(d2) nl endif
+		if(xd3) "d3" tab out(d3) nl endif
+		if(xd4) "d4" tab out(d4) nl endif
+		if(xd5) "d5" tab out(d5) nl endif
+		if(xd6) "d6" tab out(d6) nl endif
+		if(xd7) "d7" tab out(d7) nl endif
+		if(xd8) "d8" tab out(d8) nl endif
+		if(xd9) "d9" tab out(d9) nl endif
+		if(xda) "da" tab out(da) nl endif
+		if(xdc) "dc" tab out(dc) nl endif
+		if(xdch) "dch" tab out(dch) nl endif
+		if(xdd1) "dd1" tab out(dd1) nl endif
+		if(xdd2) "dd2" tab out(dd2) nl endif
+		if(xdd3) "dd3" tab out(dd3) nl endif
+		if(xde) "de" tab out(de) nl endif
+		if(xdf) "df" tab out(df) nl endif
+		if(xdi) "di" tab out(di) nl endif
+		if(xdm) "dm" tab out(dm) nl endif
+		if(xdq) "dq" tab out(dq) nl endif
+		if(xds) "ds" tab out(ds) nl endif
+		if(xdt) "dt" tab out(dt) nl endif
+		if(xec) "ec" tab out(ec) nl endif
+		if(xeg) "eg" tab out(eg) nl endif
+		if(xes) "es" tab out(es) nl endif
+		if(xex) "ex" tab out(ex) nl endif
+		if(xg2) "g2" tab out(g2) nl endif
+		if(xg3) "g3" tab out(g3) nl endif
+		if(xgl) "gl" tab out(gl) nl endif
+		if(xgm) "gm" tab out(gm) nl endif
+		if(xgs) "gs" tab out(gs) nl endif
+		if(xh) "h" tab out(h) nl endif
+		if(xic) "ic" tab out(ic) nl endif
+		if(xid) "id" tab out(id) nl endif
+		if(xid1) "id1" tab out(id1) nl endif
+		if(xid2) "id2" tab out(id2) nl endif
+		if(xid3) "id3" tab out(id3) nl endif
+		if(xie) "ie" tab out(ie) nl endif
+		if(xii) "ii" tab out(ii) nl endif
+		if(xim) "im" tab out(im) nl endif
+		if(xit) "it" tab out(it) nl endif
+		if(xl2) "l2" tab out(l2) nl endif
+		if(xl3) "l3" tab out(l3) nl endif
+		if(xlc) "lc" tab out(lc) nl endif
+		if(xlcc) "lcc" tab out(lcc) nl endif
+		if(xld) "ld" tab out(ld) nl endif
+		if(xlde) "lde" tab out(lde) nl endif
+		if(xlg) "lg" tab out(lg) nl endif
+		if(xli) "li" tab out(li) nl endif
+		if(xlid) "lid" tab out(lid) nl endif
+		if(xlk) "lk" tab out(lk) nl endif
+		if(xls) "ls" tab out(ls) nl endif
+		if(xlse) "lse" tab out(lse) nl endif
+		if(xlx) "lx" tab out(lx) nl endif
+		if(xmb) "mb" tab out(mb) nl endif
+		if(xmd1) "md1" tab out(md1) nl endif
+		if(xmd2) "md2" tab out(md2) nl endif
+		if(xmd3) "md3" tab out(md3) nl endif
+		if(xmo) "mo" tab out(mo) nl endif
+		if(xmr) "mr" tab out(mr) nl endif
+		if(xms) "ms" tab out(ms) nl endif
+		if(xmt) "mt" tab out(mt) nl endif
+		if(xoa) "oa" tab out(oa) nl endif
+		if(xoc) "oc" tab out(oc) nl endif
+		if(xocc) "occ" tab out(occ) nl endif
+		if(xod) "od" tab out(od) nl endif
+		if(xode) "ode" tab out(ode) nl endif
+		if(xoi) "oi" tab out(oi) nl endif
+		if(xoid) "oid" tab out(oid) nl endif
+		if(xop) "op" tab out(op) nl endif
+		if(xor) "or" tab out(or) nl endif
+		if(xos) "os" tab out(os) nl endif
+		if(xose) "ose" tab out(ose) nl endif
+		if(xpn) "pn" tab out(pn) nl endif
+		if(xpra) "pra" tab out(pra) nl endif
+		if(xprd) "prd" tab out(prd) nl endif
+		if(xpri) "pri" tab out(pri) nl endif
+		if(xprm) "prm" tab out(prm) nl endif
+		if(xprn) "prn" tab out(prn) nl endif
+		if(xprno) "prno" tab out(prno) nl endif
+		if(xpro) "pro" tab out(pro) nl endif
+		if(xprp) "prp" tab out(prp) nl endif
+		if(xprs) "prs" tab out(prs) nl endif
+		if(xps) "ps" tab out(ps) nl endif
+		if(xra) "ra" tab out(ra) nl endif
+		if(xre) "re" tab out(re) nl endif
+		if(xrf) "rf" tab out(rf) nl endif
+		if(xrg) "rg" tab out(rg) nl endif
+		if(xrm) "rm" tab out(rm) nl endif
+		if(xro) "ro" tab out(ro) nl endif
+		if(xrs) "rs" tab out(rs) nl endif
+		if(xrt) "rt" tab out(rt) nl endif
+		if(xrx) "rx" tab out(rx) nl endif
+		if(xsc) "sc" tab out(sc) nl endif
+		if(xsg) "sg" tab out(sg) nl endif
+		if(xsk) "sk" tab out(sk) nl endif
+		if(xsn) "sn" tab out(sn) nl endif
+		if(xsp) "sp" tab out(sp) nl endif
+		if(xst) "st" tab out(st) nl endif
+		if(xt2) "t2" tab out(t2) nl endif
+		if(xt3) "t3" tab out(t3) nl endif
+		if(xtb) "tb" tab out(tb) nl endif
+		if(xtn) "tn" tab out(tn) nl endif
+		if(xtr) "tr" tab out(tr) nl endif
+		if(xu) "u" tab out(u) nl endif
+		if(xud) "ud" tab out(ud) nl endif
+		if(xva) "va" tab out(va) nl endif
+		if(xvd1) "vd1" tab out(vd1) nl endif
+		if(xvd2) "vd2" tab out(vd2) nl endif
+		if(xvd3) "vd3" tab out(vd3) nl endif

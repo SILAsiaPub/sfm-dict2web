@@ -1,0 +1,34 @@
+begin               >                   store(letter) 'abcdefghijklmnopqrstuvwxyz.#@0123456789' 
+                                        endstore 
+                                        use(main)
+
+group(main)
+any(letter)         >                   store(selectors) dup use(endselector)
+nl                  >                   ''
+' '                 >                   ''
+'/*'                >                   store(nul) use(comment)
+
+group(comment)
+'*/'                >                   endstore use(main)
+
+group(endselector)
+'{'                 >                   endstore use(getattribute)
+
+
+group(getattribute)
+any(letter)         >                   back(1) store(attrib)  use(endattrib)
+';'                 >                   ''
+' '                 >                   ''
+
+group(endattrib)
+' '                 >                   endstore
+':'                 >                   endstore use(getvalue)
+any(letter)         >                   store(value) dup use(getvalue)
+
+group(getvalue)
+';'                 >                   endstore use(testmore)
+'}'                 >                   endstore use(main)
+
+group(testmore)
+any(letter)         >                   out(selectors) d9 out(attribute) d9 out(value) nl store(attribute) dup use(endattrib)
+'}'                  >                   use(main)

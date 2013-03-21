@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <script language="JavaScript1.1" src="../common/langs.js"></script>
+  <script language="JavaScript1.1" src="../common/letters.js"></script>
+  <title></title>
+  </head>
+    <body style="
+  FONT-FAMILY: Arial, sans-serif;
+FONT-SIZE: 9pt;
+background-color: rgb(255,255,214);
+margin: 5px;">
+
+<form id="someform">
+
+<select id="sel_lang"  onchange="changeIndex();">
+<script type="text/javascript">
+var myselect=document.getElementById("sel_lang");
+try{
+ if (ver_lang != "") { myselect.add(new Option(ver_lang, "0"), null)}
+ if (eng_lang != "") { myselect.add(new Option(eng_lang, "1"), null)}
+ if (nat_lang != "") { myselect.add(new Option(nat_lang, "2"), null)} 
+ if (reg_lang != "") { myselect.add(new Option(reg_lang, "3"), null)} 
+ if (reg2_lang != "") {myselect.add(new Option(reg2_lang, "4"), null)} 
+ if (reg3_lang != "") {myselect.add(new Option(reg3_lang, "5"), null)} 
+}
+catch(e){ //in IE, try the below version instead of add()
+ if (ver_lang != "") { myselect.add(new Option(ver_lang, "0"))}
+ if (eng_lang != "") { myselect.add(new Option(eng_lang, "1"))} 
+ if (nat_lang != "") { myselect.add(new Option(nat_lang, "2"))} 
+ if (reg_lang != "") { myselect.add(new Option(reg_lang, "3"))} 
+ if (reg2_lang != "") { myselect.add(new Option(reg2_lang, "4"))} 
+ if (reg3_lang != "") { myselect.add(new Option(reg3_lang, "5"))} 
+}
+</script>
+</select> Index <br />
+<span class="select" id="let_choice"></span><span class="select" id="let_load"></span>
+</form>
+        
+ <script type="text/javascript">
+var cur_lang 
+var alpha
+document.getElementById("let_load").innerHTML = ver_alpha;
+var selectmenu=document.getElementById("sel_lang")
+ function changeIndex(){
+switch (selectmenu.selectedIndex){
+case 0: //ver
+alpha =  ver_alpha;
+cur_lang = "ver"
+break;
+case 1: //Eng
+alpha =  eng_alpha;
+cur_lang = "eng"
+break;
+case 2: //Tagalog
+alpha =  nat_alpha;
+cur_lang = "nat"
+
+break;
+case 3: //Ilocano
+alpha =  reg_alpha;
+cur_lang = "reg"
+break;
+case 4: //reg 2
+alpha =  reg2_alpha;
+cur_lang = "reg2"
+
+}
+document.getElementById("let_load").innerHTML = "";
+document.getElementById("let_choice").innerHTML = alpha;
+
+}
+
+function load_ver() {ver_alpha}
+</script> 
+ 
+
+         </body>
+</html>

@@ -1,0 +1,19 @@
+begin               >                   use(main)
+
+group(main)
+c bar codes and Plus codes and * index Eng codeing
+'|b'                >                   store(endmkr) '</b>' endstore '<b>' use(endchar)
+'|i'                >                   store(endmkr) '</i>' endstore '<i>' use(endchar)
+'|b|i'              >                   store(endmkr) '</i></b>' endstore '<b><i>' use(endchar)
+'|i|b'              >                   store(endmkr) '</b></i>' endstore '<i><b>' use(endchar)
+' +'                >                   store(endmkr) '</b>' endstore ' <b>' use(endcharspace)
+'+'                 >                   store(endmkr) '</b>' endstore '<b>' use(endcharspace)
+
+
+group(endchar)
+'|r'                >                   out(endmkr) use(main)
+'<'                  >                    out(endmkr) dup use(main)
+
+group(endcharspace)
+' '                >                   out(endmkr) ' ' use(main)
+'<'                  >                    out(endmkr) dup use(main)

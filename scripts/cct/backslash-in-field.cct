@@ -1,0 +1,8 @@
+begin >     use(main)
+
+group(main)
+'\pc '              >                   dup use(fixbackslash)
+
+group(fixbackslash)
+'\'                  >                   '/'
+nl                  >                   dup use(main)

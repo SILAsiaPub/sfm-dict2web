@@ -1,0 +1,14 @@
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"> 
+     <xsl:template match="*[local-name() = $csstranslate//element/text()]">
+            <!-- handle translation of abbreviations into full word in css -->
+            <xsl:element name="div">
+                  <xsl:attribute name="class">
+                        <xsl:value-of select="name()"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="name()"/>
+                        <xsl:text>_</xsl:text>
+                        <xsl:value-of select="replace(.,'\.','')"/><!-- period removed from abbreviation -->
+                  </xsl:attribute>
+            </xsl:element>
+      </xsl:template>
+</xsl:stylesheet>

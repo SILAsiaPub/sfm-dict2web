@@ -1,0 +1,12 @@
+Lines not starting with an _ are ignored
+_eg
+_g2
+_g3
+_re
+_gl
+_df
+_re
+_rm
+_ro
+_rs
+_ra

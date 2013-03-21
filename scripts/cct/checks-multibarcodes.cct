@@ -1,0 +1,29 @@
+c Changes table to check for bar code inconsistencies
+c such as repeaded codes |b then another |b or |i then another |i
+c Written by Ian McQuay
+c 2012-02-22
+begin               >                   store(lxlabel)  '\lx ' store(nul) use(main)
+
+group(main)
+'\lx '              >                   store(linecount) '1' store(lx) use(lx)
+nl                  >                   incr(linecount) dup
+'\'                 >                   clear(boldon) clear(italicon)
+                                        set(regularon)
+                                        store(field) use(getfield)
+'|b'                >                   if(boldon) out(lxlabel) out(lx) nl out(linecount) ' repeated |b' nl '\' out(field) out(nul) nl nl else set(boldon) clear(regularon) endif store(nul)
+'|i'                >                   if(italicon) out(lxlabel) out(lx) nl out(linecount) ' repeated |i' nl '\' out(field) out(nul) nl nl else set(italicon) clear(regularon) endif  store(nul)
+"|r"                >                   if(regularon) out(lxlabel) out(lx) nl out(linecount)  ' repeated |r' nl '\' out(field) out(nul) nl nl endif
+                                        set(regularon) 
+                                        clear(boldon)
+                                        clear(italicon)
+                                        store(nul)
+
+group(lx)
+nl                  >                   store(nul) incr(linecount)  use(main)
+
+group(getfield)
+' '                 >                   dup store(nul) use(main)
+
+group(getline)
+'\'                 >                   dup
+nl                  >                   dup dup Use(main)

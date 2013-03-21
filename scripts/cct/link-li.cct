@@ -1,0 +1,34 @@
+c Replace individual words with hyperlinks in certain xml fields
+c tool to aid automatic processing of SIL Philippines schema sfm dictionaries
+c written by Ian McQuay 2011-05-19
+c created automatically:2012-10-12T08:00:54.003+08:00
+ 
+begin	>	  store(bound) ' ;,.<>()'  endstore use(main)
+ 
+group(main)
+'<re>'        >        dup back(1) use(insert)
+'<ro>'        >        dup back(1) use(insert)
+'<rs>'        >        dup back(1) use(insert)
+'<ra>'        >        dup back(1) use(insert)
+'<mb>'        >        dup back(1) use(insert)
+'<ex>'        >        dup back(1) use(insert)
+
+
+group(insert)
+'/re>'        >        dup use(main)
+'/ro>'        >        dup use(main)
+'/rs>'        >        dup use(main)
+'/ra>'        >        dup use(main)
+'/mb>'        >        dup use(main)
+'/ex>'        >        dup use(main)
+
+prec(bound) "babag sammo" fol(bound)     >     '<link data="00258">' dup '</link>'
+prec(bound) "binukut bariˈ" fol(bound)     >     '<link data="00747">' dup '</link>'
+prec(bound) "limboy-limboyan tangan jaˈ" fol(bound)     >     '<link data="02688">' dup '</link>'
+prec(bound) "loka siput" fol(bound)     >     '<link data="02787">' dup '</link>'
+prec(bound) "passaˈ paddu" fol(bound)     >     '<link data="03382">' dup '</link>'
+prec(bound) "passaˈ paddu" fol(bound)     >     '<link data="03636">' dup '</link>'
+prec(bound) "Mapasset du baw ya sakayi-sakayi." fol(bound)     >     '<link data="03637">' dup '</link>'
+prec(bound) "nangon tanduk" fol(bound)     >     '<link data="04168">' dup '</link>'
+prec(bound) "sinulaputan tabbuk" fol(bound)     >     '<link data="04535">' dup '</link>'
+prec(bound) "Tuwaˈ hāˈ" fol(bound)     >     '<link data="05315">' dup '</link>'

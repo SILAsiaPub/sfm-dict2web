@@ -1,0 +1,16 @@
+begin               >                   use(main)
+
+group(main)
+'<lx>'              >                   dup use(glottal)
+'<rf>'              >                   dup use(glottal)
+'<ld>'              >                   dup use(glottal)
+"<ps>"              >                   dup use(replace)
+
+group(replace)
+'/'                 >                   '_'
+'</'                >                   dup use(main)
+
+group(glottal)
+"'"                 >                   u02C8 c Modifier letter verticle line
+'</'                >                   dup use(main)
+

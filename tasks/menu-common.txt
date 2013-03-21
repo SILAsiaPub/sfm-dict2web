@@ -1,0 +1,5 @@
+# - common Project choices
+#Menu wording;1call    2:tasklist  3.tasklist file   4.task handle   5.source file in project path
+Generate css from PS check;tasklist tasks\tasks-ps-check-to-css.txt %iso%-check-to-css D:\All-SIL-PLB\WebMaster\Publishing\Dict-svn\data\%iso%\checks\fields\ps.xml
+Generate css from oc check;tasklist tasks\tasks-oc-check-to-css.txt %iso%-check-to-css 
+Generate check fields html page;tasklist tasks\tasks-check-sample-fields.txt %iso%-check-sample-fields D:\All-SIL-PLB\WebMaster\Publishing\Dict-svn\data\%iso%\xml\%iso%-sorted.xml

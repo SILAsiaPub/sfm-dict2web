@@ -1,0 +1,20 @@
+c CCT to check if bar codes used in files
+begin	>	store(barrcount) '0' 
+                                        store(baricount) '0' 
+                                        store(barbcount) '0' 
+                                        store(zero) '0' store(alpha) 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' store(nul)
+'|r'	>	incr(barrcount)
+'|b'	>	incr(barbcount)
+'|i'	>	incr(baricount)
+'\lx '              >                   store(nul)
+'_'                 >                   incr(underscorecount)
+' +' any(alpha)     >                   incr(pluscount)
+' *'                >                   incr(iecount)
+endfile	>	dup
+		'|r barcodes    = ' out(barrcount) ifgt(barrcount) cont(zero) tab 'Barcodes found use bar2sfm.cct'	endif nl
+		'|b barcodes    = ' out(barbcount) ifgt(barbcount) cont(zero) tab 'Barcodes found use bar2sfm.cct'	endif nl
+		'|i barcodes    = ' out(baricount) ifgt(bar1count) cont(zero) tab 'Barcodes found use bar2sfm.cct'	endif nl
+                                        'underscore  = ' out(underscorecount) ifgt(underscorecount) cont(zero) tab 'Underscore found use bar2sfm.cct'	endif nl
+                                        'Plus        = ' out(pluscount) ifgt(pluscount) cont(zero) tab 'Plus found use bar2sfm.cct'	endif nl 
+                                        'Index Eng * = ' out(iecount) ifgt(iecount) cont(zero) tab 'Plus found use bar2sfm.cct'	endif nl 
+		endfile

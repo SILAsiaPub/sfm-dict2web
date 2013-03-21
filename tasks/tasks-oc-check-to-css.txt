@@ -1,0 +1,2 @@
+# tasks-check-to-css.txt
+xslt check-to-css "" %cd%\%projectpath%\checks\fields\oc.xml %projectpath%\xml\oc.css

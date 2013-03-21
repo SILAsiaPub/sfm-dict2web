@@ -1,0 +1,8 @@
+begin               >                   use(main)
+
+group(main)
+"<ps>"              >                   dup use(replace)
+
+group(replace)
+'/'                 >                   '_'
+'</ps>'             >                   dup use(main)

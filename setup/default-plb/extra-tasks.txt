@@ -1,0 +1,8 @@
+# Yakan yka
+# lines starting with a # are ignored
+# entries following hash are ignored
+# see ivb sample for the newer heirachy.
+genericGroupstartwithlist lxGroup "ms lc ld li ls"
+genericgrouping lxGroup ps "lcGroup ldGroup liGroup lsGroup"
+genericgrouping msGroup ps
+genericgroupserialnodes  "ra re rg rs rt sc"

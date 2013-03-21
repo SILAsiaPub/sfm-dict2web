@@ -1,0 +1,13 @@
+begin               >                   use(head)
+
+group(head)
+'prec('                  >              incr(lines) store(nul) use(main)
+
+
+
+group(main)
+'prec('             >                   incr(lines)  store(nul)
+                                        ifgt(lines) '14999' endstore dup use(tail)
+
+group(tail)
+"xxx"               >                   dup                                        

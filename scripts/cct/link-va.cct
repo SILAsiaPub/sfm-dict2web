@@ -1,0 +1,183 @@
+c Replace individual words with hyperlinks in certain xml fields
+c tool to aid automatic processing of SIL Philippines schema sfm dictionaries
+c written by Ian McQuay 2011-05-19
+c created automatically:2013-03-01T15:52:01.277+07:00
+ 
+begin	>	  store(bound) ' ;,.<>()' d51  
+		store(ā) 'Āā'
+		store(a) 'Aa'
+		store(b) 'Bb'
+		store(c) 'Cc'
+		store(d) 'Dd'
+		store(ē) 'Ēē'
+		store(e) 'Ee'
+		store(g) 'Gg'
+		store(h) 'Hh'
+		store(i) 'Ii'
+		store(ī) 'Īī'
+		store(j) 'Jj'
+		store(k) 'Kk'
+		store(l) 'Ll'
+		store(m) 'Mm'
+		store(ŋ) 'Ŋŋ'
+		store(n) 'Nn'
+		store(ō) 'Ōō'
+		store(o) 'Oo'
+		store(p) 'Pp'
+		store(r) 'Rr'
+		store(s) 'Ss'
+		store(t) 'Tt'
+		store(ū) 'Ūū'
+		store(u) 'Uu'
+		store(w) 'Ww'
+		store(y) 'Yy'
+		store(-) '-'
+			endstore use(main)
+ 
+group(main)
+'<re>'        >        dup back(1) use(insert)
+'<rf>'        >        dup back(1) use(insert)
+'<rg>'        >        dup back(1) use(insert)
+'<rm>'        >        dup back(1) use(insert)
+'<ro>'        >        dup back(1) use(insert)
+'<rs>'        >        dup back(1) use(insert)
+'<ra>'        >        dup back(1) use(insert)
+'<mb>'        >        dup back(1) use(insert)
+'<lc>'        >        dup back(1) use(insert)
+'<ld>'        >        dup back(1) use(insert)
+'<lk>'        >        dup back(1) use(insert)
+'<ls>'        >        dup back(1) use(insert)
+
+
+group(skip)
+')'	>	dup use(insert)
+
+group(skipfield)
+'>'	>	dup use(insert)
+
+group(insert)
+'('	>	dup use(skip)  c skip bracketed words
+'<ch'	>	dup use(skipfield)
+'<li'	>	dup use(skipfield)
+'/re>'        >        dup use(main)
+'/rf>'        >        dup use(main)
+'/rg>'        >        dup use(main)
+'/rm>'        >        dup use(main)
+'/ro>'        >        dup use(main)
+'/rs>'        >        dup use(main)
+'/ra>'        >        dup use(main)
+'/mb>'        >        dup use(main)
+'/lc>'        >        dup use(main)
+'/ld>'        >        dup use(main)
+'/lk>'        >        dup use(main)
+'/ls>'        >        dup use(main)
+
+prec(bound) any(h) "es" fol(bound)     >     '<link data="00027" title="stop">' dup '</link>'
+prec(bound) any(a) "mdis" fol(bound)     >     '<link data="00077" title="move">' dup '</link>'
+prec(bound) any(a) "gngey" fol(bound)     >     '<link data="00083" title="listen">' dup '</link>'
+prec(bound) any(a) "p" fol(bound)     >     '<link data="00123" title="get">' dup '</link>'
+prec(bound) any(h) "ap" fol(bound)     >     '<link data="00123" title="get">' dup '</link>'
+prec(bound) any(a) "htot" fol(bound)     >     '<link data="00131" title="come out">' dup '</link>'
+prec(bound) any(a) "tda" fol(bound)     >     '<link data="00164" title="leave behind a part of">' dup '</link>'
+prec(bound) any(a) "kdit" fol(bound)     >     '<link data="00172" title="dried by the sun">' dup '</link>'
+prec(bound) any(c) "himah" fol(bound)     >     '<link data="00188" title="race">' dup '</link>'
+prec(bound) any(a) "n" fol(bound)     >     '<link data="00359" title="when in the future">' dup '</link>'
+prec(bound) any(a) "nggen" fol(bound)     >     '<link data="00385" title="what/how will it be done?">' dup '</link>'
+prec(bound) any(a) "nyinyiwan" fol(bound)     >     '<link data="00429" title="shadow">' dup '</link>'
+prec(bound) any(p) "agripat" fol(bound)     >     '<link data="00436" title="moment">' dup '</link>'
+prec(bound) any(a) "lkitran" fol(bound)     >     '<link data="00532" title="pitch">' dup '</link>'
+prec(bound) any(a) "rowat" fol(bound)     >     '<link data="00551" title="clothing">' dup '</link>'
+prec(bound) any(a) "riwriw" fol(bound)     >     '<link data="00553" title="rhetorical">' dup '</link>'
+prec(bound) any(d) "asda" fol(bound)     >     '<link data="00568" title="split firewood">' dup '</link>'
+prec(bound) any(d) "awa" fol(bound)     >     '<link data="00570" title="and consequently">' dup '</link>'
+prec(bound) any(a) "sged" fol(bound)     >     '<link data="00572" title="flame of a fire">' dup '</link>'
+prec(bound) any(a) "sidin" fol(bound)     >     '<link data="00577" title="crowd out">' dup '</link>'
+prec(bound) any(a) "tikaw" fol(bound)     >     '<link data="00641" title="leap across">' dup '</link>'
+prec(bound) any(a) "wānen" fol(bound)     >     '<link data="00664" title="exclamation of defeat or impossibility">' dup '</link>'
+prec(bound) any(d) "apidyid" fol(bound)     >     '<link data="00735" title="place">' dup '</link>'
+prec(bound) any(b) "adichi" fol(bound)     >     '<link data="00736" title="tree, balete">' dup '</link>'
+prec(bound) any(b) "adichid" fol(bound)     >     '<link data="00737" title="invert">' dup '</link>'
+prec(bound) any(p) "amagbaga" fol(bound)     >     '<link data="00743" title="advice">' dup '</link>'
+prec(bound) any(b) "alagoysan" fol(bound)     >     '<link data="00798" title="tree, plum">' dup '</link>'
+prec(bound) any(m) "asbāli" fol(bound)     >     '<link data="00925" title="instead">' dup '</link>'
+prec(bound) any(s) "ibolyas" fol(bound)     >     '<link data="01141" title="onion">' dup '</link>'
+prec(bound) any(m) "onson" fol(bound)     >     '<link data="01163" title="pile, especially clothing">' dup '</link>'
+prec(bound) any(b) "olsit" fol(bound)     >     '<link data="01229" title="bad luck">' dup '</link>'
+prec(bound) any(c) "hehat" fol(bound)     >     '<link data="01291" title="sudden and unexpected">' dup '</link>'
+prec(bound) any(c) "himban" fol(bound)     >     '<link data="01304" title="chapel">' dup '</link>'
+prec(bound) any(c) "hindaan" fol(bound)     >     '<link data="01305" title="store">' dup '</link>'
+prec(bound) any(s) "inilas" fol(bound)     >     '<link data="01306" title="thongs, pair of">' dup '</link>'
+prec(bound) any(k) "onokon" fol(bound)     >     '<link data="01322" title="collect to wash/put away dishes">' dup '</link>'
+prec(bound) any(n) "a2" fol(bound)     >     '<link data="01400" title="already">' dup '</link>'
+prec(bound) any(d) "awes" fol(bound)     >     '<link data="01452" title="anus">' dup '</link>'
+prec(bound) any(d) "aw" fol(bound)     >     '<link data="01634" title="there yonder not seen">' dup '</link>'
+prec(bound) any(d) "yō" fol(bound)     >     '<link data="01636" title="command to call a pig">' dup '</link>'
+prec(bound) any(d) "ichod" fol(bound)     >     '<link data="01649" title="back of">' dup '</link>'
+prec(bound) any(d) "yak" fol(bound)     >     '<link data="01655" title="">' dup '</link>'
+prec(bound) any(d) "imo" fol(bound)     >     '<link data="01656" title="you, to">' dup '</link>'
+prec(bound) any(d) "inyo" fol(bound)     >     '<link data="01658" title="you, to">' dup '</link>'
+prec(bound) any(d) "ira" fol(bound)     >     '<link data="01661" title="them, to">' dup '</link>'
+prec(bound) any(i) "ngga" fol(bound)     >     '<link data="01681" title="no, negative response">' dup '</link>'
+prec(bound) any(b) "apor" fol(bound)     >     '<link data="01720" title="boat, large">' dup '</link>'
+prec(bound) any(g) "astos" fol(bound)     >     '<link data="01738" title="expense">' dup '</link>'
+prec(bound) any(b) "olpin" fol(bound)     >     '<link data="01797" title="ballpoint pen">' dup '</link>'
+prec(bound) any(b) "ahotok" fol(bound)     >     '<link data="01831" title="blister">' dup '</link>'
+prec(bound) any(n) "eheg" fol(bound)     >     '<link data="01890" title="dregs from a liquid">' dup '</link>'
+prec(bound) any(h) "epaw" fol(bound)     >     '<link data="01937" title="jump over">' dup '</link>'
+prec(bound) any(i) "siwet" fol(bound)     >     '<link data="02060" title="swift">' dup '</link>'
+prec(bound) any(k) "amalaysay" fol(bound)     >     '<link data="02278" title="crab, land">' dup '</link>'
+prec(bound) any(k) "awop" fol(bound)     >     '<link data="02289" title="gather up">' dup '</link>'
+prec(bound) any(n) "yira" fol(bound)     >     '<link data="02374" title="them">' dup '</link>'
+prec(bound) any(k) "alimbora" fol(bound)     >     '<link data="02423" title="winds, transitional">' dup '</link>'
+prec(bound) any(k) "ayiyan" fol(bound)     >     '<link data="02512" title="situation">' dup '</link>'
+prec(bound) any(k) "ilga" fol(bound)     >     '<link data="02542" title="speak harshly">' dup '</link>'
+prec(bound) any(k) "odson" fol(bound)     >     '<link data="02602" title="foam rubber mattress">' dup '</link>'
+prec(bound) any(k) "ros" fol(bound)     >     '<link data="02723" title="cross">' dup '</link>'
+prec(bound) any(l) "amisa" fol(bound)     >     '<link data="02838" title="table">' dup '</link>'
+prec(bound) any(p) "alimos" fol(bound)     >     '<link data="02945" title="alms for the poor">' dup '</link>'
+prec(bound) any(l) "oylola" fol(bound)     >     '<link data="03000" title="idles, engine">' dup '</link>'
+prec(bound) any(m) "angket" fol(bound)     >     '<link data="03099" title="">' dup '</link>'
+prec(bound) any(m) "an-" fol(bound)     >     '<link data="03113" title="prefix, verbal">' dup '</link>'
+prec(bound) any(m) "akaynamot" fol(bound)     >     '<link data="03191" title="about">' dup '</link>'
+prec(bound) any(m) "edyo" fol(bound)     >     '<link data="03213" title="more or less">' dup '</link>'
+prec(bound) any(n) "yeng" fol(bound)     >     '<link data="03327" title="at once">' dup '</link>'
+prec(bound) any(l) "angetnget" fol(bound)     >     '<link data="03370" title="grind the teeth">' dup '</link>'
+prec(bound) any(i) "h" fol(bound)     >     '<link data="03403" title="Oops!">' dup '</link>'
+prec(bound) any(n) "yopos" fol(bound)     >     '<link data="03447" title="along the edge, stay">' dup '</link>'
+prec(bound) any(o) "hbot" fol(bound)     >     '<link data="03489" title="come out">' dup '</link>'
+prec(bound) any(p) "asicho" fol(bound)     >     '<link data="03631" title="turn, to make a">' dup '</link>'
+prec(bound) any(p) "agket" fol(bound)     >     '<link data="03647" title="fly eggs of bluebottle fly">' dup '</link>'
+prec(bound) any(p) "asoysoy" fol(bound)     >     '<link data="03652" title="push">' dup '</link>'
+prec(bound) any(p) "admis" fol(bound)     >     '<link data="03669" title="press down on">' dup '</link>'
+prec(bound) any(p) "langgana" fol(bound)     >     '<link data="03740" title="basin for washing">' dup '</link>'
+prec(bound) any(p) "an-" fol(bound)     >     '<link data="03826" title="prefix, instrumental">' dup '</link>'
+prec(bound) any(p) "ayan" fol(bound)     >     '<link data="03836" title="container">' dup '</link>'
+prec(bound) any(p) "arihas" fol(bound)     >     '<link data="03926" title="equal">' dup '</link>'
+prec(bound) any(p) "ichopichong" fol(bound)     >     '<link data="04081" title="ripples caused by fish/wind">' dup '</link>'
+prec(bound) any(p) "intor" fol(bound)     >     '<link data="04113" title="paint">' dup '</link>'
+prec(bound) any(p) "apira" fol(bound)     >     '<link data="04120" title="how many/much?">' dup '</link>'
+prec(bound) any(p) "rīto" fol(bound)     >     '<link data="04125" title="fry, to crispy">' dup '</link>'
+prec(bound) any(p) "oringikngik" fol(bound)     >     '<link data="04234" title="giggle">' dup '</link>'
+prec(bound) any(p) "ongngikngik" fol(bound)     >     '<link data="04234" title="giggle">' dup '</link>'
+prec(bound) any(s) "ā" fol(bound)     >     '<link data="04241" title="command to chase away a cat">' dup '</link>'
+prec(bound) any(p) "oyopoy" fol(bound)     >     '<link data="04268" title="windblown">' dup '</link>'
+prec(bound) any(p) "roglima" fol(bound)     >     '<link data="04284" title="problem">' dup '</link>'
+prec(bound) any(p) "roblema" fol(bound)     >     '<link data="04284" title="problem">' dup '</link>'
+prec(bound) any(w) "āgem" fol(bound)     >     '<link data="04308" title="dove">' dup '</link>'
+prec(bound) any(r) "ombeng" fol(bound)     >     '<link data="04392" title="proper">' dup '</link>'
+prec(bound) any(r) "egalo" fol(bound)     >     '<link data="04408" title="gift">' dup '</link>'
+prec(bound) any(r) "ibok" fol(bound)     >     '<link data="04429" title="disturb">' dup '</link>'
+prec(bound) any(s) "aranta" fol(bound)     >     '<link data="04660" title="lively in conversation">' dup '</link>'
+prec(bound) any(s) "yō" fol(bound)     >     '<link data="04732" title="command to shoo away chickens">' dup '</link>'
+prec(bound) any(c) "hangori" fol(bound)     >     '<link data="04744" title="now">' dup '</link>'
+prec(bound) any(c) "hicho" fol(bound)     >     '<link data="04745" title="elbow">' dup '</link>'
+prec(bound) any(s) "isidok" fol(bound)     >     '<link data="04750" title="spoon">' dup '</link>'
+prec(bound) any(h) "iganti" fol(bound)     >     '<link data="04753" title="giant">' dup '</link>'
+prec(bound) any(s) "impangan na" fol(bound)     >     '<link data="04821" title="afterwards">' dup '</link>'
+prec(bound) any(s) "istēma" fol(bound)     >     '<link data="04870" title="method">' dup '</link>'
+prec(bound) any(s) "ya" fol(bound)     >     '<link data="04991" title="this">' dup '</link>'
+prec(bound) any(t) "adichokod" fol(bound)     >     '<link data="05041" title="turn the back">' dup '</link>'
+prec(bound) any(t) "īnek" fol(bound)     >     '<link data="05253" title="yam, kind of">' dup '</link>'
+prec(bound) any(t) "okdis" fol(bound)     >     '<link data="05404" title="cross paths with">' dup '</link>'
+prec(bound) any(t) "oyen" fol(bound)     >     '<link data="05433" title="defect, imitative">' dup '</link>'
+prec(bound) any(y) "elo" fol(bound)     >     '<link data="05553" title="ice">' dup '</link>'

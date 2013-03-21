@@ -1,0 +1,3 @@
+# tasks-check-sample-fields
+xslt remove-node "node2remove=lxGroup" data\%iso%\xml\%iso%-sorted.xml
+xslt check-sample-fields-list "" %outfile% %htmlpath%\common\samplefields.html

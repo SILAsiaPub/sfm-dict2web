@@ -1,0 +1,2 @@
+# tasks-check-to-css.txt
+xslt check-to-css "transfrom=; transto=-" %cd%\%projectpath%\checks\fields\ps.xml %projectpath%\xml\ps.css

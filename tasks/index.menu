@@ -1,0 +1,7 @@
+Make split ie fields;xslt generic-split-string-for-nodes "elementstosplit='ie'" "data\kne\xml\kne-sorted.xml" "data\kne\xml\kne-index.xml"
+# Vernacular index
+Make ver index;tasklist index-ver.tasks
+Make eng index;tasklist index-eng.tasks
+Combine JS files;command copy "'%cd%\setup\letters.txt'+'%cd%\data\kne\xml\alphalinks-ver.txt'+'%cd%\data\kne\xml\alphalinks-eng.txt' '%cd%\%projectpath%\xml\letters.txt'"
+Fix JS;command binmay "-s '1A' -r '' -i '%cd%\%projectpath%\xml\letters.txt' -o '%localhostpath%\common\letters.js'"
+Make lx.js;xslt js-lx "headwordfields='lx va'" "%cd%\%projectpath%\xml\%iso%-sorted.xml" "%localhostpath%\common\lx.js"

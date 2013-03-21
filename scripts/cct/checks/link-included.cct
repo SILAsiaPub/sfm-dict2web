@@ -1,0 +1,15 @@
+c Replace individual words with hyperlinks in certain xml fields
+c tool to aid automatic processing of SIL Philippines schema sfm dictionaries
+c written by Ian McQuay 2011-05-19
+c created automatically:2012-08-21T12:15:32.382+08:00
+ 
+begin	>	  store(bound) ' ;,.<>()'  endstore use(main)
+ 
+group(main)
+'<included item 1>'        >        dup back(1) use(insert)
+'<included item 2>'        >        dup back(1) use(insert)
+
+
+group(insert)
+'/included item 1>'        >        dup use(main)
+'/included item 2>'        >        dup use(main)

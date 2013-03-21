@@ -1,0 +1,213 @@
+c temp file generated from sfm codes found in projectc Written by Ian McQuay 2011-07-23c generated 2011-07-23begin	>	store(nul)
+		store() "0"
+		store(ad) "0"
+		store(ar) "0"
+		store(co) "0"
+		store(d2) "0"
+		store(d3) "0"
+		store(dc) "0"
+		store(dch) "0"
+		store(dd1) "0"
+		store(dd2) "0"
+		store(dd3) "0"
+		store(de) "0"
+		store(df) "0"
+		store(di) "0"
+		store(dj) "0"
+		store(dn) "0"
+		store(dq) "0"
+		store(ds) "0"
+		store(dt) "0"
+		store(dv1) "0"
+		store(ec) "0"
+		store(eg) "0"
+		store(ex) "0"
+		store(g2) "0"
+		store(g3) "0"
+		store(gl) "0"
+		store(gp) "0"
+		store(ie) "0"
+		store(lc) "0"
+		store(ld) "0"
+		store(li) "0"
+		store(lk) "0"
+		store(lo) "0"
+		store(ls) "0"
+		store(lx) "0"
+		store(mb) "0"
+		store(md2) "0"
+		store(md3) "0"
+		store(mo) "0"
+		store(mr) "0"
+		store(ms) "0"
+		store(oc) "0"
+		store(oi) "0"
+		store(op) "0"
+		store(or) "0"
+		store(pa) "0"
+		store(pn) "0"
+		store(ps) "0"
+		store(ra) "0"
+		store(rb) "0"
+		store(re) "0"
+		store(rf) "0"
+		store(rg) "0"
+		store(rm) "0"
+		store(ro) "0"
+		store(rocov) "0"
+		store(rs) "0"
+		store(sc) "0"
+		store(sg) "0"
+		store(sn) "0"
+		store(tb) "0"
+		store(tr) "0"
+		store(ud) "0"
+		store(va) "0"
+		store(vd1) "0"
+		store(vd2) "0"
+		store(vd3) "0"
+		store() "0"
+		store(nul)
+		clear(x)
+		clear(xad)
+		clear(xar)
+		clear(xco)
+		clear(xd2)
+		clear(xd3)
+		clear(xdc)
+		clear(xdch)
+		clear(xdd1)
+		clear(xdd2)
+		clear(xdd3)
+		clear(xde)
+		clear(xdf)
+		clear(xdi)
+		clear(xdj)
+		clear(xdn)
+		clear(xdq)
+		clear(xds)
+		clear(xdt)
+		clear(xdv1)
+		clear(xec)
+		clear(xeg)
+		clear(xex)
+		clear(xg2)
+		clear(xg3)
+		clear(xgl)
+		clear(xgp)
+		clear(xie)
+		clear(xlc)
+		clear(xld)
+		clear(xli)
+		clear(xlk)
+		clear(xlo)
+		clear(xls)
+		clear(xlx)
+		clear(xmb)
+		clear(xmd2)
+		clear(xmd3)
+		clear(xmo)
+		clear(xmr)
+		clear(xms)
+		clear(xoc)
+		clear(xoi)
+		clear(xop)
+		clear(xor)
+		clear(xpa)
+		clear(xpn)
+		clear(xps)
+		clear(xra)
+		clear(xrb)
+		clear(xre)
+		clear(xrf)
+		clear(xrg)
+		clear(xrm)
+		clear(xro)
+		clear(xrocov)
+		clear(xrs)
+		clear(xsc)
+		clear(xsg)
+		clear(xsn)
+		clear(xtb)
+		clear(xtr)
+		clear(xud)
+		clear(xva)
+		clear(xvd1)
+		clear(xvd2)
+		clear(xvd3)
+		clear(x)
+		use(main)
+
+group(main)
+endfile	>	endstore dup back Use(end)
+
+group(end)
+endfile	> dup
+		if(x) "" tab out() nl endif
+		if(xad) "ad" tab out(ad) nl endif
+		if(xar) "ar" tab out(ar) nl endif
+		if(xco) "co" tab out(co) nl endif
+		if(xd2) "d2" tab out(d2) nl endif
+		if(xd3) "d3" tab out(d3) nl endif
+		if(xdc) "dc" tab out(dc) nl endif
+		if(xdch) "dch" tab out(dch) nl endif
+		if(xdd1) "dd1" tab out(dd1) nl endif
+		if(xdd2) "dd2" tab out(dd2) nl endif
+		if(xdd3) "dd3" tab out(dd3) nl endif
+		if(xde) "de" tab out(de) nl endif
+		if(xdf) "df" tab out(df) nl endif
+		if(xdi) "di" tab out(di) nl endif
+		if(xdj) "dj" tab out(dj) nl endif
+		if(xdn) "dn" tab out(dn) nl endif
+		if(xdq) "dq" tab out(dq) nl endif
+		if(xds) "ds" tab out(ds) nl endif
+		if(xdt) "dt" tab out(dt) nl endif
+		if(xdv1) "dv1" tab out(dv1) nl endif
+		if(xec) "ec" tab out(ec) nl endif
+		if(xeg) "eg" tab out(eg) nl endif
+		if(xex) "ex" tab out(ex) nl endif
+		if(xg2) "g2" tab out(g2) nl endif
+		if(xg3) "g3" tab out(g3) nl endif
+		if(xgl) "gl" tab out(gl) nl endif
+		if(xgp) "gp" tab out(gp) nl endif
+		if(xie) "ie" tab out(ie) nl endif
+		if(xlc) "lc" tab out(lc) nl endif
+		if(xld) "ld" tab out(ld) nl endif
+		if(xli) "li" tab out(li) nl endif
+		if(xlk) "lk" tab out(lk) nl endif
+		if(xlo) "lo" tab out(lo) nl endif
+		if(xls) "ls" tab out(ls) nl endif
+		if(xlx) "lx" tab out(lx) nl endif
+		if(xmb) "mb" tab out(mb) nl endif
+		if(xmd2) "md2" tab out(md2) nl endif
+		if(xmd3) "md3" tab out(md3) nl endif
+		if(xmo) "mo" tab out(mo) nl endif
+		if(xmr) "mr" tab out(mr) nl endif
+		if(xms) "ms" tab out(ms) nl endif
+		if(xoc) "oc" tab out(oc) nl endif
+		if(xoi) "oi" tab out(oi) nl endif
+		if(xop) "op" tab out(op) nl endif
+		if(xor) "or" tab out(or) nl endif
+		if(xpa) "pa" tab out(pa) nl endif
+		if(xpn) "pn" tab out(pn) nl endif
+		if(xps) "ps" tab out(ps) nl endif
+		if(xra) "ra" tab out(ra) nl endif
+		if(xrb) "rb" tab out(rb) nl endif
+		if(xre) "re" tab out(re) nl endif
+		if(xrf) "rf" tab out(rf) nl endif
+		if(xrg) "rg" tab out(rg) nl endif
+		if(xrm) "rm" tab out(rm) nl endif
+		if(xro) "ro" tab out(ro) nl endif
+		if(xrocov) "rocov" tab out(rocov) nl endif
+		if(xrs) "rs" tab out(rs) nl endif
+		if(xsc) "sc" tab out(sc) nl endif
+		if(xsg) "sg" tab out(sg) nl endif
+		if(xsn) "sn" tab out(sn) nl endif
+		if(xtb) "tb" tab out(tb) nl endif
+		if(xtr) "tr" tab out(tr) nl endif
+		if(xud) "ud" tab out(ud) nl endif
+		if(xva) "va" tab out(va) nl endif
+		if(xvd1) "vd1" tab out(vd1) nl endif
+		if(xvd2) "vd2" tab out(vd2) nl endif
+		if(xvd3) "vd3" tab out(vd3) nl endif
+		if(x) "" tab out() nl endif

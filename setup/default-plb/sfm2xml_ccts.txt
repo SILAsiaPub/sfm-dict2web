@@ -1,0 +1,7 @@
+Lines not starting with an _ are ignored
+_%iso%.cct
+_Lg2utf8.cct
+_fix_wedge_quotes.cct
+_xml-char.cct
+_sfm2xml-2.cct
+_inline2xml.cct

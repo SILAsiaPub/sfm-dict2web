@@ -1,0 +1,37 @@
+c Replace individual words with hyperlinks in certain xml fields
+c tool to aid automatic processing of SIL Philippines schema sfm dictionaries
+c written by Ian McQuay 2011-05-19
+c created automatically:2012-08-30T11:32:28.927+08:00
+ 
+begin	>	  store(bound) ' ;,.<>()'  endstore use(main)
+ 
+group(main)
+'<re>'        >        dup back(1) use(insert)
+'<rf>'        >        dup back(1) use(insert)
+'<rg>'        >        dup back(1) use(insert)
+'<rm>'        >        dup back(1) use(insert)
+'<ro>'        >        dup back(1) use(insert)
+'<rs>'        >        dup back(1) use(insert)
+'<ra>'        >        dup back(1) use(insert)
+'<mb>'        >        dup back(1) use(insert)
+'<lc>'        >        dup back(1) use(insert)
+'<ld>'        >        dup back(1) use(insert)
+'<lk>'        >        dup back(1) use(insert)
+'<ls>'        >        dup back(1) use(insert)
+'<ex>'        >        dup back(1) use(insert)
+
+
+group(insert)
+'/re>'        >        dup use(main)
+'/rf>'        >        dup use(main)
+'/rg>'        >        dup use(main)
+'/rm>'        >        dup use(main)
+'/ro>'        >        dup use(main)
+'/rs>'        >        dup use(main)
+'/ra>'        >        dup use(main)
+'/mb>'        >        dup use(main)
+'/lc>'        >        dup use(main)
+'/ld>'        >        dup use(main)
+'/lk>'        >        dup use(main)
+'/ls>'        >        dup use(main)
+'/ex>'        >        dup use(main)

@@ -1,0 +1,33 @@
+/* CSS Document page.css Style the dictionary head and basic structure.*/
+body{padding:0;margin:0;FONT-FAMILY:Arial,sans-serif;FONT-SIZE:9pt;}
+/* Primary div elements  ------------------------------------------- */
+.top{margin:0;width:100%;min-width:400px;Height:120px;background-color:silver;}
+.bottom{width:100%; height: 100%; border:2px solid red;margin:0 0 0 0;}
+/* Top elements  ------------------------------------------- */
+.logo{float:left;margin:0 0 0 40px;width:15%;min-width:100px;height:91px;color:white;border-left:solid 1px white;border-right:solid 1px white;background:#005b99;}
+.pagetitle{float:left;margin:0 0 0 0px;height:75px;width:77%;color:white;BACKGROUND-COLOR:#6699cc;}
+.contactbar{float:left;margin:0 0 0 0px;background:#005b99;height:16px;width:77%;color:white;padding:3 0px 0 10px;}
+.buttonbar{float:left;margin:0px 0 0 45px;padding:5px 0 0 0 ;width:80%;}/* Title sub elements  ------------------------------------------- */
+/* Logo and title sub elements  ------------------------------------------- */
+.logo img{width:90px;height:85px;margin:4px 0 0 10px;}
+.pagetitle a{color:white;}
+h1  a:hover{color:#336699;}
+h1{FONT-WEIGHT:bolder;FONT-SIZE:24pt;FONT-STYLE:normal;PADDING:0px 0 0px 20px;margin:0;text-align:left;}
+h2{FONT-SIZE:16pt;FONT-WEIGHT:bolder;FONT-STYLE:normal;PADDING:0 0 7px 20px;margin:0;}
+/* contactbar sub elements  ------------------------------------------- */
+.contactbar  a:hover{background-color:#3366ff;}
+.contactbar div{display:inline;padding:2px 10px 2px 10px;}
+.contactbar a{display:inline;padding:0px 5px 2px 5px;color:white;}
+/* buttonbar sub elements  ------------------------------------------- */
+.buttonbar a{margin:0px 0 2px 0;padding:1px 5px 2px 5px;background-color:rgb(226,226,226)}
+.buttonbar a:hover{padding:0px 5px 2px 5px;background-color:white;}
+.message{font-weight:bold;font-size: 11pt;margin: 0px 0 3em;float:right }
+/* Bottom elements  ------------------------------------------- */
+.left {float:left; margin-top:-38px;height: 520px; width: 30%; min-width: 120px; padding:0; }
+.content{float:left;margin-top:-38px;height:520px;width:60%;min-width:240px;padding:0;}
+/* The following is for IE browsers to correct width */
+/* The following is for non IE browsers to correct width */
+a{text-decoration:none;}
+.select{Position:absolute;top:155px  left:5px;height:50px;width:300px;}
+.selector{width:100%;height:80px}
+.index{width:100%;height:460px;}

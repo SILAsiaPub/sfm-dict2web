@@ -1,0 +1,6 @@
+# kne ver tasklist
+setvar index ver
+xslt index-get-fields "sourcetextstring='lx va'" "" "data\kne\xml\index-%index%-joined.xml"
+xslt Index-group-n-sort "translateaccents=%translateaccents% customfind=%customfind% customreplace=%customreplace% collationname=%collationname%  decchar2remove='%decchar2remove%' secondarysort=%secondarysort%" "" "data\kne\xml\index-ver-grouped.xml"
+xslt index2split-html "path='file:///D:/All-SIL-PLB/WebMaster/plb-www/prog/kne/dict/common' splitelement=alpha index=ver  spacebeforehom=%spacebeforehom%" "data\kne\xml\index-ver-grouped.xml" "data\kne\log\index-ver.log"
+xslt index_letters_head "curlang=ver" "data\kne\xml\index-ver-grouped.xml" "data\kne\xml\alphalinks-ver.txt"

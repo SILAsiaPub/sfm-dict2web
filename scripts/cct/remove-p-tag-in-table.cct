@@ -1,0 +1,28 @@
+begin               >                   use(main)
+
+group(main)
+'<TABLE'           >                   dup use(intable)     c
+'<FONT'             >                   store(nul) use(strip2)
+'</FONT'            >                   store(nul) use(strip2)
+'<B>'               >                   ' ' dup
+
+group(intable)
+'<COL WIDTH='       >                   incr(cols)  dup
+'<TD'               >                   dup ifgt(cols) '4' begin use(intd) else use(main) end 
+'</TABLE>'          >                   dup store(cols) '0' endstore use(main)
+
+group(intd)
+'<FONT'             >                   store(nul) use(strip)
+'</FONT'            >                   store(nul) use(strip)
+'<P'                >                   store(nul) use(strip)
+'</P'               >                   store(nul) use(strip)
+'</TD>'             >                   dup use(intable)
+nl                  >                   ''
+tab                 >                   ''
+
+
+group(strip)
+'>'                 >                   endstore use(intd)
+
+group(strip2)
+'>'                 >                   endstore use(main)

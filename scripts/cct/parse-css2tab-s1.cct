@@ -1,0 +1,21 @@
+begin >     use(main)
+
+group(main)
+'{'                 >                   d9 set(attb)
+':'                 >                   d9 set(value)
+':hover'                 >              dup
+':before'                 >              dup
+':after'                 >              dup
+'  '                 >                   ' '
+nl                 >                   ' '
+nl ' '                 >                   ' '
+',' nl                 >                   ', '
+'}'                 >                   nl
+';}'                 >                   nl
+'; }'                 >                   nl
+';'                 >                   nl d9
+'/*'                >                   store(nul) use(comment)
+nl nl               >                   nl back(1)
+
+group(comment)
+'*/'                >                   endstore use(main)

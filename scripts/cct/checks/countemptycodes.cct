@@ -1,0 +1,358 @@
+c temp file generated from sfm codes found in project
+c Written by Ian McQuay 2011-07-23
+c generated 2012-02-08
+begin	>	store(nul)
+		store(a) "0"
+		store(ad) "0"
+		store(ar) "0"
+		store(ck) "0"
+		store(co) "0"
+		store(date) "0"
+		store(dq) "0"
+		store(ds) "0"
+		store(ec) "0"
+		store(eg) "0"
+		store(es) "0"
+		store(ex) "0"
+		store(g2) "0"
+		store(gl) "0"
+		store(ic) "0"
+		store(id) "0"
+		store(id1) "0"
+		store(ie) "0"
+		store(ii) "0"
+		store(il) "0"
+		store(is) "0"
+		store(it) "0"
+		store(l2) "0"
+		store(ld) "0"
+		store(lg) "0"
+		store(lg1) "0"
+		store(lg2) "0"
+		store(li) "0"
+		store(ls) "0"
+		store(lx) "0"
+		store(m) "0"
+		store(m2) "0"
+		store(mo) "0"
+		store(ms) "0"
+		store(nb) "0"
+		store(note) "0"
+		store(oa) "0"
+		store(oc) "0"
+		store(oi) "0"
+		store(os) "0"
+		store(pa) "0"
+		store(pn) "0"
+		store(ps) "0"
+		store(qn) "0"
+		store(ra) "0"
+		store(rd) "0"
+		store(rf) "0"
+		store(rm) "0"
+		store(ro) "0"
+		store(rs) "0"
+		store(rt) "0"
+		store(rx) "0"
+		store(s2) "0"
+		store(sc) "0"
+		store(sn) "0"
+		store(so) "0"
+		store(sp) "0"
+		store(t2) "0"
+		store(t3) "0"
+		store(tb) "0"
+		store(tn) "0"
+		store(tr) "0"
+		store(tump) "0"
+		store(tx) "0"
+		store(ud) "0"
+		store(udi) "0"
+		store(units) "0"
+		store(va) "0"
+		store(vo) "0"
+		store(nul)
+		clear(xa)
+		clear(xad)
+		clear(xar)
+		clear(xck)
+		clear(xco)
+		clear(xdate)
+		clear(xdq)
+		clear(xds)
+		clear(xec)
+		clear(xeg)
+		clear(xes)
+		clear(xex)
+		clear(xg2)
+		clear(xgl)
+		clear(xic)
+		clear(xid)
+		clear(xid1)
+		clear(xie)
+		clear(xii)
+		clear(xil)
+		clear(xis)
+		clear(xit)
+		clear(xl2)
+		clear(xld)
+		clear(xlg)
+		clear(xlg1)
+		clear(xlg2)
+		clear(xli)
+		clear(xls)
+		clear(xlx)
+		clear(xm)
+		clear(xm2)
+		clear(xmo)
+		clear(xms)
+		clear(xnb)
+		clear(xnote)
+		clear(xoa)
+		clear(xoc)
+		clear(xoi)
+		clear(xos)
+		clear(xpa)
+		clear(xpn)
+		clear(xps)
+		clear(xqn)
+		clear(xra)
+		clear(xrd)
+		clear(xrf)
+		clear(xrm)
+		clear(xro)
+		clear(xrs)
+		clear(xrt)
+		clear(xrx)
+		clear(xs2)
+		clear(xsc)
+		clear(xsn)
+		clear(xso)
+		clear(xsp)
+		clear(xt2)
+		clear(xt3)
+		clear(xtb)
+		clear(xtn)
+		clear(xtr)
+		clear(xtump)
+		clear(xtx)
+		clear(xud)
+		clear(xudi)
+		clear(xunits)
+		clear(xva)
+		clear(xvo)
+		use(main)
+
+group(main)
+'\a ' nl	>	dup incr(a) set(xa) store(nul)
+'\a' nl	>	dup incr(a) set(xa) store(nul)
+'\ad ' nl	>	dup incr(ad) set(xad) store(nul)
+'\ad' nl	>	dup incr(ad) set(xad) store(nul)
+'\ar ' nl	>	dup incr(ar) set(xar) store(nul)
+'\ar' nl	>	dup incr(ar) set(xar) store(nul)
+'\ck ' nl	>	dup incr(ck) set(xck) store(nul)
+'\ck' nl	>	dup incr(ck) set(xck) store(nul)
+'\co ' nl	>	dup incr(co) set(xco) store(nul)
+'\co' nl	>	dup incr(co) set(xco) store(nul)
+'\date ' nl	>	dup incr(date) set(xdate) store(nul)
+'\date' nl	>	dup incr(date) set(xdate) store(nul)
+'\dq ' nl	>	dup incr(dq) set(xdq) store(nul)
+'\dq' nl	>	dup incr(dq) set(xdq) store(nul)
+'\ds ' nl	>	dup incr(ds) set(xds) store(nul)
+'\ds' nl	>	dup incr(ds) set(xds) store(nul)
+'\ec ' nl	>	dup incr(ec) set(xec) store(nul)
+'\ec' nl	>	dup incr(ec) set(xec) store(nul)
+'\eg ' nl	>	dup incr(eg) set(xeg) store(nul)
+'\eg' nl	>	dup incr(eg) set(xeg) store(nul)
+'\es ' nl	>	dup incr(es) set(xes) store(nul)
+'\es' nl	>	dup incr(es) set(xes) store(nul)
+'\ex ' nl	>	dup incr(ex) set(xex) store(nul)
+'\ex' nl	>	dup incr(ex) set(xex) store(nul)
+'\g2 ' nl	>	dup incr(g2) set(xg2) store(nul)
+'\g2' nl	>	dup incr(g2) set(xg2) store(nul)
+'\gl ' nl	>	dup incr(gl) set(xgl) store(nul)
+'\gl' nl	>	dup incr(gl) set(xgl) store(nul)
+'\ic ' nl	>	dup incr(ic) set(xic) store(nul)
+'\ic' nl	>	dup incr(ic) set(xic) store(nul)
+'\id ' nl	>	dup incr(id) set(xid) store(nul)
+'\id' nl	>	dup incr(id) set(xid) store(nul)
+'\id1 ' nl	>	dup incr(id1) set(xid1) store(nul)
+'\id1' nl	>	dup incr(id1) set(xid1) store(nul)
+'\ie ' nl	>	dup incr(ie) set(xie) store(nul)
+'\ie' nl	>	dup incr(ie) set(xie) store(nul)
+'\ii ' nl	>	dup incr(ii) set(xii) store(nul)
+'\ii' nl	>	dup incr(ii) set(xii) store(nul)
+'\il ' nl	>	dup incr(il) set(xil) store(nul)
+'\il' nl	>	dup incr(il) set(xil) store(nul)
+'\is ' nl	>	dup incr(is) set(xis) store(nul)
+'\is' nl	>	dup incr(is) set(xis) store(nul)
+'\it ' nl	>	dup incr(it) set(xit) store(nul)
+'\it' nl	>	dup incr(it) set(xit) store(nul)
+'\l2 ' nl	>	dup incr(l2) set(xl2) store(nul)
+'\l2' nl	>	dup incr(l2) set(xl2) store(nul)
+'\ld ' nl	>	dup incr(ld) set(xld) store(nul)
+'\ld' nl	>	dup incr(ld) set(xld) store(nul)
+'\lg ' nl	>	dup incr(lg) set(xlg) store(nul)
+'\lg' nl	>	dup incr(lg) set(xlg) store(nul)
+'\lg1 ' nl	>	dup incr(lg1) set(xlg1) store(nul)
+'\lg1' nl	>	dup incr(lg1) set(xlg1) store(nul)
+'\lg2 ' nl	>	dup incr(lg2) set(xlg2) store(nul)
+'\lg2' nl	>	dup incr(lg2) set(xlg2) store(nul)
+'\li ' nl	>	dup incr(li) set(xli) store(nul)
+'\li' nl	>	dup incr(li) set(xli) store(nul)
+'\ls ' nl	>	dup incr(ls) set(xls) store(nul)
+'\ls' nl	>	dup incr(ls) set(xls) store(nul)
+'\lx ' nl	>	dup incr(lx) set(xlx) store(nul)
+'\lx' nl	>	dup incr(lx) set(xlx) store(nul)
+'\m ' nl	>	dup incr(m) set(xm) store(nul)
+'\m' nl	>	dup incr(m) set(xm) store(nul)
+'\m2 ' nl	>	dup incr(m2) set(xm2) store(nul)
+'\m2' nl	>	dup incr(m2) set(xm2) store(nul)
+'\mo ' nl	>	dup incr(mo) set(xmo) store(nul)
+'\mo' nl	>	dup incr(mo) set(xmo) store(nul)
+'\ms ' nl	>	dup incr(ms) set(xms) store(nul)
+'\ms' nl	>	dup incr(ms) set(xms) store(nul)
+'\nb ' nl	>	dup incr(nb) set(xnb) store(nul)
+'\nb' nl	>	dup incr(nb) set(xnb) store(nul)
+'\note ' nl	>	dup incr(note) set(xnote) store(nul)
+'\note' nl	>	dup incr(note) set(xnote) store(nul)
+'\oa ' nl	>	dup incr(oa) set(xoa) store(nul)
+'\oa' nl	>	dup incr(oa) set(xoa) store(nul)
+'\oc ' nl	>	dup incr(oc) set(xoc) store(nul)
+'\oc' nl	>	dup incr(oc) set(xoc) store(nul)
+'\oi ' nl	>	dup incr(oi) set(xoi) store(nul)
+'\oi' nl	>	dup incr(oi) set(xoi) store(nul)
+'\os ' nl	>	dup incr(os) set(xos) store(nul)
+'\os' nl	>	dup incr(os) set(xos) store(nul)
+'\pa ' nl	>	dup incr(pa) set(xpa) store(nul)
+'\pa' nl	>	dup incr(pa) set(xpa) store(nul)
+'\pn ' nl	>	dup incr(pn) set(xpn) store(nul)
+'\pn' nl	>	dup incr(pn) set(xpn) store(nul)
+'\ps ' nl	>	dup incr(ps) set(xps) store(nul)
+'\ps' nl	>	dup incr(ps) set(xps) store(nul)
+'\qn ' nl	>	dup incr(qn) set(xqn) store(nul)
+'\qn' nl	>	dup incr(qn) set(xqn) store(nul)
+'\ra ' nl	>	dup incr(ra) set(xra) store(nul)
+'\ra' nl	>	dup incr(ra) set(xra) store(nul)
+'\rd ' nl	>	dup incr(rd) set(xrd) store(nul)
+'\rd' nl	>	dup incr(rd) set(xrd) store(nul)
+'\rf ' nl	>	dup incr(rf) set(xrf) store(nul)
+'\rf' nl	>	dup incr(rf) set(xrf) store(nul)
+'\rm ' nl	>	dup incr(rm) set(xrm) store(nul)
+'\rm' nl	>	dup incr(rm) set(xrm) store(nul)
+'\ro ' nl	>	dup incr(ro) set(xro) store(nul)
+'\ro' nl	>	dup incr(ro) set(xro) store(nul)
+'\rs ' nl	>	dup incr(rs) set(xrs) store(nul)
+'\rs' nl	>	dup incr(rs) set(xrs) store(nul)
+'\rt ' nl	>	dup incr(rt) set(xrt) store(nul)
+'\rt' nl	>	dup incr(rt) set(xrt) store(nul)
+'\rx ' nl	>	dup incr(rx) set(xrx) store(nul)
+'\rx' nl	>	dup incr(rx) set(xrx) store(nul)
+'\s2 ' nl	>	dup incr(s2) set(xs2) store(nul)
+'\s2' nl	>	dup incr(s2) set(xs2) store(nul)
+'\sc ' nl	>	dup incr(sc) set(xsc) store(nul)
+'\sc' nl	>	dup incr(sc) set(xsc) store(nul)
+'\sn ' nl	>	dup incr(sn) set(xsn) store(nul)
+'\sn' nl	>	dup incr(sn) set(xsn) store(nul)
+'\so ' nl	>	dup incr(so) set(xso) store(nul)
+'\so' nl	>	dup incr(so) set(xso) store(nul)
+'\sp ' nl	>	dup incr(sp) set(xsp) store(nul)
+'\sp' nl	>	dup incr(sp) set(xsp) store(nul)
+'\t2 ' nl	>	dup incr(t2) set(xt2) store(nul)
+'\t2' nl	>	dup incr(t2) set(xt2) store(nul)
+'\t3 ' nl	>	dup incr(t3) set(xt3) store(nul)
+'\t3' nl	>	dup incr(t3) set(xt3) store(nul)
+'\tb ' nl	>	dup incr(tb) set(xtb) store(nul)
+'\tb' nl	>	dup incr(tb) set(xtb) store(nul)
+'\tn ' nl	>	dup incr(tn) set(xtn) store(nul)
+'\tn' nl	>	dup incr(tn) set(xtn) store(nul)
+'\tr ' nl	>	dup incr(tr) set(xtr) store(nul)
+'\tr' nl	>	dup incr(tr) set(xtr) store(nul)
+'\tump ' nl	>	dup incr(tump) set(xtump) store(nul)
+'\tump' nl	>	dup incr(tump) set(xtump) store(nul)
+'\tx ' nl	>	dup incr(tx) set(xtx) store(nul)
+'\tx' nl	>	dup incr(tx) set(xtx) store(nul)
+'\ud ' nl	>	dup incr(ud) set(xud) store(nul)
+'\ud' nl	>	dup incr(ud) set(xud) store(nul)
+'\udi ' nl	>	dup incr(udi) set(xudi) store(nul)
+'\udi' nl	>	dup incr(udi) set(xudi) store(nul)
+'\units ' nl	>	dup incr(units) set(xunits) store(nul)
+'\units' nl	>	dup incr(units) set(xunits) store(nul)
+'\va ' nl	>	dup incr(va) set(xva) store(nul)
+'\va' nl	>	dup incr(va) set(xva) store(nul)
+'\vo ' nl	>	dup incr(vo) set(xvo) store(nul)
+'\vo' nl	>	dup incr(vo) set(xvo) store(nul)
+endfile	>	endstore dup back Use(end)
+
+group(end)
+endfile	> dup
+		
+		if(xa) "a" tab out(a) nl endif
+		if(xad) "ad" tab out(ad) nl endif
+		if(xar) "ar" tab out(ar) nl endif
+		if(xck) "ck" tab out(ck) nl endif
+		if(xco) "co" tab out(co) nl endif
+		if(xdate) "date" tab out(date) nl endif
+		if(xdq) "dq" tab out(dq) nl endif
+		if(xds) "ds" tab out(ds) nl endif
+		if(xec) "ec" tab out(ec) nl endif
+		if(xeg) "eg" tab out(eg) nl endif
+		if(xes) "es" tab out(es) nl endif
+		if(xex) "ex" tab out(ex) nl endif
+		if(xg2) "g2" tab out(g2) nl endif
+		if(xgl) "gl" tab out(gl) nl endif
+		if(xic) "ic" tab out(ic) nl endif
+		if(xid) "id" tab out(id) nl endif
+		if(xid1) "id1" tab out(id1) nl endif
+		if(xie) "ie" tab out(ie) nl endif
+		if(xii) "ii" tab out(ii) nl endif
+		if(xil) "il" tab out(il) nl endif
+		if(xis) "is" tab out(is) nl endif
+		if(xit) "it" tab out(it) nl endif
+		if(xl2) "l2" tab out(l2) nl endif
+		if(xld) "ld" tab out(ld) nl endif
+		if(xlg) "lg" tab out(lg) nl endif
+		if(xlg1) "lg1" tab out(lg1) nl endif
+		if(xlg2) "lg2" tab out(lg2) nl endif
+		if(xli) "li" tab out(li) nl endif
+		if(xls) "ls" tab out(ls) nl endif
+		if(xlx) "lx" tab out(lx) nl endif
+		if(xm) "m" tab out(m) nl endif
+		if(xm2) "m2" tab out(m2) nl endif
+		if(xmo) "mo" tab out(mo) nl endif
+		if(xms) "ms" tab out(ms) nl endif
+		if(xnb) "nb" tab out(nb) nl endif
+		if(xnote) "note" tab out(note) nl endif
+		if(xoa) "oa" tab out(oa) nl endif
+		if(xoc) "oc" tab out(oc) nl endif
+		if(xoi) "oi" tab out(oi) nl endif
+		if(xos) "os" tab out(os) nl endif
+		if(xpa) "pa" tab out(pa) nl endif
+		if(xpn) "pn" tab out(pn) nl endif
+		if(xps) "ps" tab out(ps) nl endif
+		if(xqn) "qn" tab out(qn) nl endif
+		if(xra) "ra" tab out(ra) nl endif
+		if(xrd) "rd" tab out(rd) nl endif
+		if(xrf) "rf" tab out(rf) nl endif
+		if(xrm) "rm" tab out(rm) nl endif
+		if(xro) "ro" tab out(ro) nl endif
+		if(xrs) "rs" tab out(rs) nl endif
+		if(xrt) "rt" tab out(rt) nl endif
+		if(xrx) "rx" tab out(rx) nl endif
+		if(xs2) "s2" tab out(s2) nl endif
+		if(xsc) "sc" tab out(sc) nl endif
+		if(xsn) "sn" tab out(sn) nl endif
+		if(xso) "so" tab out(so) nl endif
+		if(xsp) "sp" tab out(sp) nl endif
+		if(xt2) "t2" tab out(t2) nl endif
+		if(xt3) "t3" tab out(t3) nl endif
+		if(xtb) "tb" tab out(tb) nl endif
+		if(xtn) "tn" tab out(tn) nl endif
+		if(xtr) "tr" tab out(tr) nl endif
+		if(xtump) "tump" tab out(tump) nl endif
+		if(xtx) "tx" tab out(tx) nl endif
+		if(xud) "ud" tab out(ud) nl endif
+		if(xudi) "udi" tab out(udi) nl endif
+		if(xunits) "units" tab out(units) nl endif
+		if(xva) "va" tab out(va) nl endif
+		if(xvo) "vo" tab out(vo) nl endif

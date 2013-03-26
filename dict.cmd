@@ -69,7 +69,7 @@ echo[
 :: the following line processes the choice
 FOR /D %%c IN (%menuoptions%) DO call :menueval %%c 
 ::goto :%menuname%
-goto:eof
+goto :eof
 
 :menueval
 :: run through the choices to find a match then calls the selected option
@@ -78,7 +78,7 @@ set option=option%let%
 :: /I makes the IF comparison case-insensitive
 ::IF /I '%Choice%'=='q' exit /b
 IF /I '%Choice%'=='%let%' call %%%option%%% %iso%
-goto:eof
+goto :eof
 
 :setup
 set iso=
@@ -105,7 +105,7 @@ call :dictvar
 call :checks
 set logtemp=
 echo --------------------------------------------
-goto:eof
+goto :eof
 
 :dictvar
 :: some localization may be needed for these variables. 
@@ -131,7 +131,7 @@ set unicodeccount=C:\Program Files (x86)\bin\UnicodeCCount.exe
 set removelist=%basepath%\%projectpath%\setup\fields_to_remove.txt
 set setuppath=%basepath%\%projectpath%\setup\
 set xmlpath=%basepath%\%projectpath%\xml
-goto:eof
+goto :eof
 
 :checks
 :: create directories if not exist
@@ -173,7 +173,7 @@ echo . . . Found! langs.js
 
 set gt=^>
 set lt=^<
-goto:eof
+goto :eof
 
 :novarfile
 call :samplevarfile
@@ -225,7 +225,8 @@ echo[
 set write=y
 set /P write=Do you want to write this information to a file for reuse? y or n:
 if "%write%"=="y" call:writevarfile
-call:eof
+call :eof
+
 
 :writevarfile
 set outfile=var\%iso%.cmd
@@ -250,7 +251,7 @@ echo set collationname=%collationname%>>%outfile%
 echo set translateaccents=%translateaccents%>>%outfile%
 echo set customfind=%customfind%>>%outfile%
 echo set customreplace=%customreplace%>>%outfile%
-goto:eof
+goto :eof
 
 :clearlangvar
 SET iso=
@@ -265,7 +266,7 @@ SET reg3lang=
 SET labelname=
 SET splitseparator=
 SET intropage=
-goto:eof
+goto :eof
 
 :samplevarfile
 echo  var\%proj%.cmd does not exist.
@@ -290,17 +291,17 @@ echo set customfind=
 echo set customreplace=
 echo[
 echo[
-goto:eof
+goto :eof
 
 
 echo[
-goto:eof
+goto :eof
 
 :setupfile
 set report=Setup file %~1 copied if needed
 copy "%basepath%\setup\default-%type%\%~1" "%basepath%\%projectpath%\setup"
 echo copy "%basepath%\setup\default-%type%\%~1" "%basepath%\%projectpath%\setup"
-goto:eof
+goto :eof
 
 :checkdir
 set report=Checking dir %~1 
@@ -311,7 +312,7 @@ if exist "%~1"  (
           mkdir "%~1" 
           echo mkdir "%~1" 
 )
-goto:eof
+goto :eof
 
 
 :debugsettings
@@ -326,12 +327,12 @@ set lev2=
 set lev3=
 set lev4=::
 set lev5=::
-goto:eof
+goto :eof
 
 :getiso
 SET proj=
 SET /P Choice=Enter iso code: 
-goto:eof
+goto :eof
 
 :test_xslt
 echo on

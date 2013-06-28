@@ -103,3 +103,5 @@ span{margin:0}
 .mr .d{margin:0 2px 0 2px; }
 .ar .d{margin:0 2px 0 0; }
 .mb .d{margin:0 2px 0 0; }
+.sub {font-size:x-small; vertical-align:bottom;color:grey}
+.lx .sub {font-size:small; }

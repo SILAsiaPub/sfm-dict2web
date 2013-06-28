@@ -6,6 +6,7 @@ Style the dictionary content
 /* Labels for fields */
 :before, :after { font-weight:normal; font-style: italic; font-size: 70%;}
 .exGroup:before {content: 'Example sentence'}
+.comma:after  { content: ', ';font-weight:bold;}
 .d {margin: 0 0 0 4px}
 .ms:before { content: 'Sense '}
 .ps:before { content: ''}
@@ -15,11 +16,11 @@ Style the dictionary content
 .object:before {content: 'Object: '}
 .ld:after {content: ' Derivative'}
 .reGroup:before { content: 'Related word '}
-.re:after { content: ', '}
+
 .rsGroup:before { content: 'Synonym '}
-.rs:after { content: ', '}
+
 .raGroup:before { content: 'Antonym '}
-.ra:after { content: ', '}
+
 .scGroup:before { content: '(See appendix '}
 .scGroup:after { content: ') '} 
 .sc:after { content: '; '}
@@ -27,8 +28,8 @@ Style the dictionary content
 .co:before { content: "Meaning ";}
 .rtGroup:before { content: "(See ";}
 .rtGroup:after { content: ' for table) '}
-.rt:after { content: ', '}
-.ii:after { content: ', '}
+
+
 .rgGroup:before { content: 'See also '}
 .lsGroup:before { content: 'Saying '}
 .li:after { content: ' Idiom'}
@@ -115,6 +116,5 @@ Style the dictionary content
 
 
     
-/* keep .last:after at the end of css */
-.last:after { content: ' '}
+
 

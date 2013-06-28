@@ -37,10 +37,19 @@ This template then includes other templates.
             </div>
       </xsl:template>-->
       <xsl:template match="*">
-            <!-- Generic data handling template -->
+            <!-- Generic data handling template                                                  -->
             <div class="{name(.)}">
                   <span class="d">
-                        <xsl:apply-templates/>
+                        <xsl:choose>
+                              <xsl:when test="name() = 'lx'">
+                                    <xsl:call-template name="hom">
+                                          <xsl:with-param name="string" select="."/>
+                                    </xsl:call-template>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                    <xsl:apply-templates/>
+                              </xsl:otherwise>
+                        </xsl:choose>
                   </span>
             </div>
       </xsl:template>
@@ -85,10 +94,10 @@ This template then includes other templates.
                   <xsl:when test="name() = $sensehomgrouped//element">
                         <span>
                               <xsl:attribute name="class">
-                                    <xsl:value-of select="name()"/>
-                                    <xsl:if test="position() + 1 = last()">
-                                          <xsl:text> last</xsl:text>
-                                    </xsl:if>
+                                    <xsl:value-of select="name()"/><xsl:text> d</xsl:text>
+                                    <xsl:call-template name="serialposition">
+                                          <xsl:with-param name="followingsiblings" select="count(following-sibling::*[name() = $field])"/>
+                                    </xsl:call-template>
                               </xsl:attribute>
                               <xsl:choose>
                                     <xsl:when test="child::link">
@@ -107,9 +116,9 @@ This template then includes other templates.
                               <span>
                                     <xsl:attribute name="class">
                                           <xsl:text>d</xsl:text>
-                                          <xsl:if test="position() + 1 = last()">
-                                                <xsl:text> last</xsl:text>
-                                          </xsl:if>
+                                          <xsl:call-template name="serialposition">
+                                                <xsl:with-param name="followingsiblings" select="count(following-sibling::*[name() = $field])"/>
+                                          </xsl:call-template>
                                     </xsl:attribute>
                                     <xsl:choose>
                                           <xsl:when test="child::link">
@@ -141,13 +150,14 @@ This template then includes other templates.
       </xsl:template>
       <xsl:template match="*[local-name() = $serialnodes//element/text()]">
             <!-- like sens hom but can't use that as it has numbers. But needs the last class added -->
+            <xsl:param name="field" select="name()"/>
             <xsl:element name="span">
                   <xsl:attribute name="class">
                         <xsl:value-of select="name()"/>
                         <xsl:text> d</xsl:text>
-                        <xsl:if test="position() + 1 = last()">
-                              <xsl:text> last</xsl:text>
-                        </xsl:if>
+                        <xsl:call-template name="serialposition">
+                              <xsl:with-param name="followingsiblings" select="count(following-sibling::*[name() = $field])"/>
+                        </xsl:call-template>
                   </xsl:attribute>
                   <xsl:choose>
                         <xsl:when test="child::link">
@@ -186,5 +196,14 @@ This template then includes other templates.
                         <xsl:apply-templates/>
                   </span>
             </xsl:element>
+      </xsl:template>
+      <xsl:template name="serialposition">
+            <xsl:param name="followingsiblings"/>
+            <xsl:choose>
+                  <xsl:when test="$followingsiblings = 0"/>
+                  <xsl:otherwise>
+                        <xsl:text> comma</xsl:text>
+                  </xsl:otherwise>
+            </xsl:choose>
       </xsl:template>
 </xsl:stylesheet>

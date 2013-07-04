@@ -68,6 +68,9 @@ begin	&gt;	  store(bound) ' ;,.&lt;&gt;()' d51
 		store(w) 'Ww'
 		store(y) 'Yy'
 		store(-) '-'
+
+		store(*) '*'
+		
 			endstore use(main)
  
 group(main)

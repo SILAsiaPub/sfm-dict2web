@@ -66,7 +66,7 @@ set report=Inline SFM tags converted to xml
 set script=inline2xmlv2.cct
 if exist %projectpath%\setup\post-xml-inline-ccts.txt (
 call build-func build-string postxmlinlineccts post-xml-inline-ccts.txt "," "" ""
-set script=inline2xmlv2.cct%postxmlinlineccts%
+set script=%script%%postxmlinlineccts%
 ) 
 set infile=%outfile%
 set outfile=%xmlpath%\%iso%-inlinefixed.xml
@@ -82,9 +82,10 @@ goto :eof
 :: created 2012-08-14 by Ian McQuay
 set report=SFM file converted to XML
 call file2uri %~1
+
 set infile=%basepath%\%xsltpath%\blank.xml
 set outfile=%xmlpath%\%iso%-flat.xml
-set script=%basepath%\%xsltpath%\sfm2xml-dict.xslt
+set script=%basepath%\%xsltpath%\sfm2xml-dict2.xslt
 set param=sourcetexturi=%uri% tablemarker=%~2
 call build-func xslt
 goto:eof

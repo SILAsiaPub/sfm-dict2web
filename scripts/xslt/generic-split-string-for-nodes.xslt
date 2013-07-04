@@ -18,8 +18,13 @@ the following is sample input xml data:
             </xsl:call-template>
       </xsl:variable>
       <xsl:include href='inc-list2xml.xslt'/>
+	<xsl:include href='inc-strip-bar-codes.xslt'/>
       <!-- Template used to copy a generic node -->
-      <xsl:include href='inc-copy-anything.xslt'/>
+            <xsl:template match="@*|*">
+            <xsl:copy>
+                  <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+      </xsl:template>
       <!-- Template used to select data to split-->
       <xsl:template match="*[local-name() = $control/element]">
             <xsl:call-template name="subsplit">

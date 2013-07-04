@@ -623,6 +623,21 @@ copy %basepath%\setup\letters.txt+%joinbycopy% "%outfile%"
 echo copy shells\letters.txt+%joinbycopy% "%outfile%"
 goto :eof
 
+:fixinline
+set report=Inline SFM tags converted to xml
+set script=inline2xmlv2.cct
+if exist %projectpath%\setup\post-xml-inline-ccts.txt (
+call build-func build-string postxmlinlineccts post-xml-inline-ccts.txt "," "" ""
+set script=%script%%postxmlinlineccts%
+) 
+set infile=%outfile%
+set outfile=%xmlpath%\%iso%-inlinefixed.xml
+call build-func ccw
+set report=Check if well formed after cct has run
+call build-func validate
+goto :eof
+
+
 :fixjs
 :: fix js file with illegal character
 :: moved to build-func 20/08/2012 12:23:10 PM by IKM
@@ -642,6 +657,7 @@ copy "%outfile%" "%projectpath%\xml\%iso%-preindex.xml"
 echo copy "%outfile%" "%projectpath%\xml\%iso%-preindex.xml">>%logfile%
 echo copied last file to %iso%-preindex.xml
 goto :eof
+
 :splitnodes
 set splitlist=%~1
 :: moved from build-index to build-func 20/08/2012 12:36:49 PM by IKM

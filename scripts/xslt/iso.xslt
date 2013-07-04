@@ -37,7 +37,7 @@ oa'
       <!-- the above list should space or newline separated 
 	The list is for any fields that should be made into simple spans -->
       <xsl:variable name="sensehomtext" select="
-'lx
+'
 ra
 re
 rf
@@ -47,6 +47,17 @@ rt'
 "/>
       <!-- the above list should space or newline separated 
 	This list lists fields that have words with homonyms numbers and or links to multiple senses -->
+      <xsl:variable name="groupedsensehomlist" select="
+'
+ra
+re
+rg
+rs
+rt
+'
+"/>
+      <!-- the above list should space or newline separated 
+	These fields are a suset or maybe all of the sensehomtext. They are grouped fields, -->
       <xsl:variable name="omittext" select="
 'no ie rx'
 "/>

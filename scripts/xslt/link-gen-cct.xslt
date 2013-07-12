@@ -40,36 +40,39 @@ c created automatically:</xsl:text>
             <xsl:text>
  
 begin	&gt;	  store(bound) ' ;,.&lt;&gt;()' d51  
-		store(ā) 'Āā'
+		store(amacron) u0100 u0101
+		store(aacute) u00E1 u00C1
 		store(a) 'Aa'
 		store(b) 'Bb'
 		store(c) 'Cc'
 		store(d) 'Dd'
-		store(ē) 'Ēē'
+		store(emacron) u0112 u0113
+		store(ecircum) u00CA u00EA
+		store(eacute) u00C9 u00E9
 		store(e) 'Ee'
 		store(g) 'Gg'
 		store(h) 'Hh'
 		store(i) 'Ii'
-		store(ī) 'Īī'
+		store(imacron) u012A u012B
 		store(j) 'Jj'
 		store(k) 'Kk'
 		store(l) 'Ll'
 		store(m) 'Mm'
-		store(ŋ) 'Ŋŋ'
+		store(eng) u014A u014B
 		store(n) 'Nn'
-		store(ō) 'Ōō'
+		store(omacron) u014C u014D
 		store(o) 'Oo'
 		store(p) 'Pp'
 		store(r) 'Rr'
 		store(s) 'Ss'
 		store(t) 'Tt'
-		store(ū) 'Ūū'
+		store(umacron) u016A u016B
 		store(u) 'Uu'
 		store(w) 'Ww'
 		store(y) 'Yy'
-		store(-) '-'
+		store(dash) '-'
 
-		store(*) '*'
+		store(star) '*'
 		
 			endstore use(main)
  
@@ -129,8 +132,46 @@ group(insert)
                         <xsl:text>
 prec(bound) any(</xsl:text>
                         <!-- Added handling for double quote makes inside lx words with replace string. cct tables were broken before -->
-                        <!-- replace(normalize-space(.),'"',concat('" ', "'", '"', "'", ' "')) or  normalize-space(.) -->
-                        <xsl:value-of select="lower-case($ccstringfirst)"/>
+                        <!-- replace(normalize-space(.),'"',concat('" ', "'", '"', "'", ' "')) or  normalize-space(.)
+                        <xsl:value-of select="lower-case($ccstringfirst)"/> -->
+                        <xsl:choose>
+                              <xsl:when test="lower-case($ccstringfirst) = 'ā'">
+                                    <xsl:text>amacron</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'á'">
+                                    <xsl:text>aacute</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'ē'">
+                                    <xsl:text>emacron</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'ê'">
+                                    <xsl:text>ecircum</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'é'">
+                                    <xsl:text>eacute</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'ī'">
+                                    <xsl:text>imacron</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'ō'">
+                                    <xsl:text>omacron</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'ū'">
+                                    <xsl:text>umacron</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'ŋ'">
+                                    <xsl:text>eng</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = '*'">
+                                    <xsl:text>star</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = '-'">
+                                    <xsl:text>dash</xsl:text>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                    <xsl:value-of select="lower-case($ccstringfirst)"/>
+                              </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:text>) "</xsl:text>
                         <xsl:value-of select="lower-case($ccstringrest)"/>
                         <xsl:text>" fol(bound)     &gt;     '&lt;link data="</xsl:text>

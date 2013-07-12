@@ -13,6 +13,7 @@ goto :eof
 )
 call :checkiso
 :: choose depending if pre-xml-ccts.txt exists. if it does use xslt to convert sfm instead of ccts
+:: first option is newer way.
 if exist "%setuppath%\pre-xml-ccts.txt" (
 call build-func build-string prexmlcct pre-xml-ccts.txt
 call :prexmlccts

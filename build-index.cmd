@@ -71,7 +71,7 @@ set report=Index Sort and group
 set script=%basepath%\%xsltpath%\Index-group-n-sort.xslt
 set infile=%outfile%
 set outfile=%basepath%\%projectpath%\xml\index-%index%-grouped.xml
-set param=translateaccents=%translateaccents% customfind=%customfind% customreplace=%customreplace% collationname=%collationname%  decchar2remove="%decchar2remove%" secondarysort=%secondarysort%
+set param=translateaccents=%translateaccents% customfind="%customfind%"" customreplace="%customreplace%"" collationname=%collationname%  decchar2remove="%decchar2remove%" secondarysort=%secondarysort% digraphlist="%digraphlist%"
 call build-func xslt
 goto:eof
 

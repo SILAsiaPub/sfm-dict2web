@@ -101,7 +101,7 @@ Changed table cells to have different names. So instead of td they are c1 c2 c3 
                                                       </xsl:when>
                                                       <xsl:otherwise>
                                                             <!-- Output data folowing space after sfm marker -->
-                                                            <xsl:value-of select="translate(normalize-space(substring-after(.,' ')),$illegal,'')"/>
+                                                            <xsl:value-of select="normalize-space(substring-after(.,' '))"/>
                                                       </xsl:otherwise>
                                                 </xsl:choose>
                                           </xsl:element>

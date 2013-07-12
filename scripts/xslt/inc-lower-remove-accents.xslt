@@ -4,6 +4,7 @@
       <xsl:param name="customfind"/>
       <xsl:param name="customreplace"/>
       <xsl:param name="removechar"/>
+      <xsl:param name="digraphlist"/>
       <!--     <xsl:param name="decchar2remove" select="'39 34'"/>
       <xsl:variable name="entities">
             <xsl:analyze-string select="$decchar2remove" regex="\s+">
@@ -16,18 +17,24 @@
       <xsl:variable name="ac" select="'àáâãāçèéêëēìíîïɨīùúûüūòóôõöōŏő'"/>
       <xsl:variable name="un" select="'aaaaaceeeeeiiiiiiuuuuuoooooooo'"/>
       <xsl:variable name="numbers" select="'0123456789'"/>
-      <xsl:variable name="letters" select="'abcdefghijklmnopqrstuvwxyz'"/>
-      <xsl:variable name="punct">&#34;<xsl:value-of select="$removechar" />-(“~[,‘;&#39;#&#42;&#47;</xsl:variable>
-      <xsl:function name="cite:lower-remove-accents">
+      <xsl:variable name="or-digraph" select="replace($digraphlist,' ','|')"/>
+      <xsl:variable name="removefromstart">&#34;-(“~\[,‘;&#39;#&#42;&#47;<xsl:value-of select="$removechar" /></xsl:variable>
+      <xsl:include href='inc-list2xml.xslt'/>
+      <xsl:variable name="digraphs">
+            <xsl:call-template name="list2xml">
+                  <xsl:with-param name="text" select="$digraphlist"/>
+            </xsl:call-template>
+      </xsl:variable>
+      <!--  <xsl:function name="cite:lower-remove-accents">
             <xsl:param name="input"/>
             <xsl:choose>
                   <xsl:when test="$translateaccents = 'no'">
                         <xsl:choose>
                               <xsl:when test="$customfind != ''">
-                                    <xsl:sequence select="translate(replace(lower-case(normalize-unicode($input)),$customfind,$customreplace),$punct,'')"/>
+                                    <xsl:sequence select="translate(replace(lower-case(normalize-unicode($input)),$customfind,$customreplace),$removefromstart,'')"/>
                               </xsl:when>
                               <xsl:otherwise>
-                                    <xsl:sequence select="translate(lower-case(normalize-unicode($input)),$punct,'')"/>
+                                    <xsl:sequence select="translate(lower-case(normalize-unicode($input)),$removefromstart,'')"/>
                               </xsl:otherwise>
                         </xsl:choose>
                   </xsl:when>
@@ -41,11 +48,11 @@
 		               									                                      normalize-unicode($input)
 															          )
 													    ,$customfind,$customreplace)
-											      ,$punct,'')
+											      ,$removefromstart,'')
 										,$ac,$un)"/>
                               </xsl:when>
                               <xsl:otherwise>
-                                    <xsl:sequence select="translate(translate(lower-case(normalize-unicode($input)),$ac,$un),$punct,'')"/>
+                                    <xsl:sequence select="translate(translate(lower-case(normalize-unicode($input)),$ac,$un),$removefromstart,'')"/>
                               </xsl:otherwise>
                         </xsl:choose>
                   </xsl:otherwise>
@@ -55,10 +62,48 @@
             <xsl:param name="input"/>
             <xsl:choose>
                   <xsl:when test="$translateaccents = 'no'">
-                        <xsl:sequence select="translate(lower-case(normalize-unicode($input)),$punct,'')"/>
+                        <!- - Normalize text
+				convert to lower case
+				remove punctuation characters from words
+			- ->
+                        <xsl:sequence select="translate(lower-case(normalize-unicode($input)),$removefromstart,'')"/>
                   </xsl:when>
                   <xsl:otherwise>
-                        <xsl:sequence select="translate(translate(lower-case(normalize-unicode($input)),$ac,$un),$punct,'')"/>
+                        <!- - Normalize text
+				convert to lower case
+				remove accentes on vowels
+				remove punctuation characters from words
+			- ->
+                        <xsl:sequence select="translate(translate(lower-case(normalize-unicode($input)),$ac,$un),$removefromstart,'')"/>
+                  </xsl:otherwise>
+            </xsl:choose>
+      </xsl:function> -->
+      <xsl:function name="cite:custom-first-letter">
+            <xsl:param name="input"/>
+            <xsl:variable name="finddigraph" select="concat('^(',$or-digraph,'|\w).*') "/>
+            <xsl:variable name="find" select="'^[\d\*&#47; -]*(\w).*'"/>
+            <xsl:variable name="firstletter">
+                  <xsl:choose>
+                        <xsl:when test="string-length($digraphs) gt 1">
+                              <xsl:value-of select="replace($input,$finddigraph,'$1')"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                              <xsl:value-of select="replace($input,$find,'$1')"/>
+                        </xsl:otherwise>
+                  </xsl:choose>
+            </xsl:variable>
+            <xsl:sequence select="lower-case($firstletter)"/>
+      </xsl:function>
+      <xsl:function name="cite:translateaccents">
+            <xsl:param name="input"/>
+            <xsl:variable name="find" select="concat('^[\d\* ',$removefromstart,']*(\w.*)') "/>
+            <xsl:variable name="trimmedinput" select="lower-case(replace($input,$find,'$1'))"/>
+            <xsl:choose>
+                  <xsl:when test="$translateaccents = 'yes'">
+                        <xsl:sequence select="translate($trimmedinput,$ac,$un)"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                        <xsl:sequence select="$trimmedinput"/>
                   </xsl:otherwise>
             </xsl:choose>
       </xsl:function>
@@ -71,7 +116,41 @@
             <xsl:sequence select="translate($input,' ','')"/>
       </xsl:function>
       <xsl:function name="cite:hom-number">
+            <!-- used in dict-sort-with-custom-collation.xslt and index-group-n-sort.xslt -->
             <xsl:param name="input"/>
             <xsl:sequence select="substring-after($input,translate($input,$numbers,''))"/>
       </xsl:function>
+      <xsl:template name="customcollationfeedback">
+            <xsl:text disable-output-escaping="yes">
+&lt;!-- custom sort 
+          </xsl:text>
+            <xsl:value-of select="$customcollation"/>
+            <xsl:text disable-output-escaping="yes">
+           --&gt;
+</xsl:text>
+      </xsl:template>
+      <xsl:template name="defaultcollationfeedback">
+            <xsl:text disable-output-escaping="yes">
+&lt;!-- default sort 
+          </xsl:text>
+            <xsl:value-of select="$ac"/>
+            <xsl:value-of select="$default-collation"/>
+            <xsl:text disable-output-escaping="yes">
+          --&gt;
+          </xsl:text>
+      </xsl:template>
+      <xsl:template name="removeaccentsfeedback">
+            <xsl:text disable-output-escaping="yes">
+&lt;!-- remove accent visual feedback 
+	   </xsl:text>
+            <xsl:value-of select="$ac"/>
+            <xsl:text>
+Changed to
+            </xsl:text>
+            <xsl:value-of select="cite:translateaccents($ac)"/>
+            <xsl:text>
+          </xsl:text>
+            <xsl:text disable-output-escaping="yes">--&gt;
+ </xsl:text>
+      </xsl:template>
 </xsl:stylesheet>

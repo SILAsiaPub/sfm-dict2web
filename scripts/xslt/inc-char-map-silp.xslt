@@ -5,6 +5,6 @@
             <xsl:output-character character="ŋ" string='ng'/>
             <xsl:output-character character="ˈ" string="&#39;"/>
             <xsl:output-character character="'" string="&#39;"/>
-<xsl:output-character character="#" string="&amp;nbsp;"/>
+            <xsl:output-character character="#" string="&amp;nbsp;"/>
       </xsl:character-map>
 </xsl:stylesheet>

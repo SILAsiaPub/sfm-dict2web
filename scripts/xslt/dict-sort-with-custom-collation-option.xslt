@@ -7,7 +7,7 @@ Created: 5/08/2012
 Modified: 21/08/2012
 
  -->
-      <xsl:output method="xml" indent="yes"  encoding="utf-8" />
+      <xsl:output method="xml" indent="yes" encoding="utf-8"/>
       <xsl:param name="collationname"/>
       <xsl:param name="secondarysort"/>
       <xsl:include href='dict-custom-collation.xslt'/>
@@ -19,24 +19,12 @@ Modified: 21/08/2012
       </xsl:character-map>
       <xsl:template match="/*">
             <data>
+                  <xsl:call-template name="removeaccentsfeedback"/>
                   <xsl:choose>
                         <xsl:when test="$collationname != ''">
-                              <xsl:text disable-output-escaping="yes">&lt;!-- Custom sort 
-  </xsl:text>
-                              <xsl:value-of select="$punct"/>
-                              <xsl:text>
-  </xsl:text>
-                              <xsl:value-of select="$ac"/>
-                              <xsl:text>
-  </xsl:text>
-                              <xsl:value-of select="cite:lower-remove-accents($ac)"/>
-                              <xsl:text>
-  </xsl:text>
-                              <xsl:value-of select="$customcollation"/>
-                              <xsl:text disable-output-escaping="yes">    --&gt;
-</xsl:text>
+                              <xsl:call-template name="customcollationfeedback"/>
                               <xsl:for-each select="lxGroup">
-                                    <xsl:sort collation="http://saxon.sf.net/collation?rules={encode-for-uri($customcollation)}" select="cite:lower-remove-accents-word(cite:word-no-number(lx))"/>
+                                    <xsl:sort collation="http://saxon.sf.net/collation?rules={encode-for-uri($customcollation)}" select="cite:translateaccents(lx)"/>
                                     <xsl:sort collation="{$default-collation}" select="cite:hom-number(lx)"/>
                                     <xsl:sort collation="{$default-collation}" select="*[name() = $secondarysort]"/>
                                     <xsl:copy>
@@ -45,12 +33,9 @@ Modified: 21/08/2012
                               </xsl:for-each>
                         </xsl:when>
                         <xsl:otherwise>
-                              <xsl:text disable-output-escaping="yes">&lt;!-- otherwise </xsl:text>
-                              <xsl:value-of select="$default-collation"/>
-                              <xsl:text disable-output-escaping="yes">  --&gt;
-</xsl:text>
+                              <xsl:call-template name="defaultcollationfeedback"/>
                               <xsl:for-each select="lxGroup">
-                                    <xsl:sort collation="{$default-collation}" select="cite:lower-remove-accents-word(lx)"/>
+                                    <xsl:sort collation="{$default-collation}" select="cite:translateaccents(lx)"/>
                                     <xsl:sort collation="{$default-collation}" select="*[name() = $secondarysort]"/>
                                     <xsl:copy>
                                           <xsl:apply-templates/>

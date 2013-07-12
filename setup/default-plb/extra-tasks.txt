@@ -2,7 +2,20 @@
 # lines starting with a # are ignored
 # entries following hash are ignored
 # see ivb sample for the newer heirachy.
-genericGroupstartwithlist lxGroup "ms lc ld li ls"
+# added plb grouping into this part. ie. genericGroupPair ex tr
+genericGroupPair ex tr
+genericGroupstartwithlist lxGroup "ms"
+genericGroupstartwithlist lxGroup "lc ld li ls"
+genericGroupstartwithlist msGroup "lc ld li ls"
 genericgrouping lxGroup ps "lcGroup ldGroup liGroup lsGroup"
-genericgrouping msGroup ps
+genericgrouping msGroup ps "lcGroup ldGroup liGroup lsGroup"
+genericgroupinginsidelist "lcGroup ldGroup liGroup lsGroup" ps
+genericnewgroupselect rf ad
+genericaddprecedingtogroup ad rfGroup
 genericgroupserialnodes  "ra re rg rs rt sc"
+marksenseinfields "ra re rg rs rt sc c1"
+genericGroupPair oc oa
+genericaddfollowingtogroup eg ocGroup
+
+
+

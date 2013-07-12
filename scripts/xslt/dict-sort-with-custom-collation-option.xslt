@@ -7,9 +7,9 @@ Created: 5/08/2012
 Modified: 21/08/2012
 
  -->
-      <xsl:output method="xml" indent="yes" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" />
+      <xsl:output method="xml" indent="yes"  encoding="utf-8" />
       <xsl:param name="collationname"/>
-<xsl:param name="secondarysort"/>
+      <xsl:param name="secondarysort"/>
       <xsl:include href='dict-custom-collation.xslt'/>
       <xsl:variable name="default-collation" select="'http://saxon.sf.net/collation?lang=en-US;strength=primary'"/>
       <xsl:include href="inc-lower-remove-accents.xslt"/>

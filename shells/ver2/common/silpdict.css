@@ -53,8 +53,9 @@ a:hover{text-decoration:underline;background-color:yellow}
 .rt .post{margin:0 0 0 6pt;            rgb(255,255,204)rgb(245,245,220)}
 .rt{font-weight:bold;}
 span.ps span.label{font-size:100%}
-.charbold{display:inline;background-color:rgb(250,250,200);}
+.charbold{display:inline;background-color:rgb(255,255,153);}
 .charitalic{display:inline;font-style:italic;}
+.charsmallcaps {text-transform: lowercase;font-variant: small-caps}
 .charitbold{display:inline;font-style:italic;background-color:rgb(255,255,153)}
 .mb{display:inline;font-weight:bold;font-size:120%; margin:0 0 0 1em;}
 .index div,.index a{display:block;}
@@ -104,4 +105,5 @@ span{margin:0}
 .ar .d{margin:0 2px 0 0; }
 .mb .d{margin:0 2px 0 0; }
 .sub {font-size:x-small; vertical-align:bottom;color:grey}
-.lx .sub {font-size:small; }
+.lx .sub {font-size:small; vertical-align:bottom;color:grey}
+.co-mr {margin: 0 0 0 2em}

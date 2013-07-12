@@ -11,16 +11,17 @@ Changed table cells to have different names. So instead of td they are c1 c2 c3 
       <xsl:output method="xml" version="1.0" encoding="utf-8" omit-xml-declaration="yes" indent="yes"/>
       <xsl:param name="sourcetexturi"/>
       <xsl:param name="tablemarker" select="'tb'"/>
+      <xsl:param name="illegal" select="'_-+=!@#$%^&amp;'"/>
       <xsl:template match="/">
             <xsl:element name="database">
-                  <xsl:analyze-string select="replace(unparsed-text($sourcetexturi),'(\r)',' $1')" regex="\\">
+                  <xsl:analyze-string select="replace(unparsed-text($sourcetexturi),'(\r)',' $1')" regex="\n\\">
                         <!-- split on backslash, add a space to the end of every line so every empty sfm can be found -->
                         <xsl:matching-substring/>
                         <xsl:non-matching-substring>
                               <xsl:choose>
                                     <xsl:when test="string-length(substring-before(.,' ')) = 0"/>
                                     <!-- remove zero length lines -->
-                                    <xsl:when test="substring-before(.,' ') = '_sh'"/>
+                                    <xsl:when test="substring-before(.,' ') = '\_sh'"/>
                                     <!-- remove shoebox header -->
                                     <xsl:when test="substring-before(.,' ') = 'id'"/>
                                     <!-- remove id field -->
@@ -100,7 +101,7 @@ Changed table cells to have different names. So instead of td they are c1 c2 c3 
                                                       </xsl:when>
                                                       <xsl:otherwise>
                                                             <!-- Output data folowing space after sfm marker -->
-                                                            <xsl:value-of select="normalize-space(substring-after(.,' '))"/>
+                                                            <xsl:value-of select="translate(normalize-space(substring-after(.,' ')),$illegal,'')"/>
                                                       </xsl:otherwise>
                                                 </xsl:choose>
                                           </xsl:element>

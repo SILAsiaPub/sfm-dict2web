@@ -13,7 +13,7 @@ call build-func ccw
 :: do unicode character count to check if unicode already
 set report=Counted Unicode characters
 set infile=%basepath%\%projectpath%\%source%
-set outfile=%basepath%\%projectpath%\checks\char-count-unicode1.txt
+set outfile=%basepath%\%projectpath%\checks\char-count-unicode.txt
 call build-func unicodecount
 
 :: count bar codes 
@@ -31,6 +31,7 @@ set script=checks-multibarcodes.cct
 call build-func ccw
 
 :: Count fields
+echo on
 set infile=%projectpath%\%source%
 set outfile=%projectpath%\checks\temp1.txt
 sed -e "s/\\_.*//" -e "s/ .*$//" -e "s/.\n.\n/\r\n/" %infile%>%outfile%
@@ -84,7 +85,7 @@ uniq -c "%infile%" "%outfile%"
 IF %errorlevel% == 0 call build-func log "Part of speech unique fields counted"
 
 
-del %projectpath%\checks\temp*.txt
-IF %errorlevel% == 0 call build-func log "Deleted temporary file"
+::del %projectpath%\checks\temp*.txt
+::IF %errorlevel% == 0 call build-func log "Deleted temporary file"
 echo --------------------------------------------
 cd "%basepath%"

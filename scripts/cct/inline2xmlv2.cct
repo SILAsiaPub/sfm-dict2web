@@ -12,6 +12,7 @@ begin               >                   store(endwordpunc) '.,?!;:'
                                         use(main)
 
 group(main)
+
 '|r'                  >                   '<normal>' set(normal) use(normalinbold)
 '>'                 >                   dup clear(bold) clear(italic)
 ' |b'                  >                  ' <charbold>' set(bold) use(phrase)

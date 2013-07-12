@@ -19,3 +19,4 @@ set collationname=
 set translateaccents=
 set customfind=
 set customreplace=
+set digraphlist=

@@ -4,7 +4,7 @@
       <xsl:param name="customfind"/>
       <xsl:param name="customreplace"/>
       <xsl:param name="removechar"/>
- <!--     <xsl:param name="decchar2remove" select="'39 34'"/>
+      <!--     <xsl:param name="decchar2remove" select="'39 34'"/>
       <xsl:variable name="entities">
             <xsl:analyze-string select="$decchar2remove" regex="\s+">
                   <xsl:matching-substring/>
@@ -17,7 +17,7 @@
       <xsl:variable name="un" select="'aaaaaceeeeeiiiiiiuuuuuoooooooo'"/>
       <xsl:variable name="numbers" select="'0123456789'"/>
       <xsl:variable name="letters" select="'abcdefghijklmnopqrstuvwxyz'"/>
-      <xsl:variable name="punct">&#34;<xsl:value-of select="$removechar" />-(“~[,‘;&#39;#&#42;</xsl:variable>
+      <xsl:variable name="punct">&#34;<xsl:value-of select="$removechar" />-(“~[,‘;&#39;#&#42;&#47;</xsl:variable>
       <xsl:function name="cite:lower-remove-accents">
             <xsl:param name="input"/>
             <xsl:choose>
@@ -34,7 +34,15 @@
                   <xsl:otherwise>
                         <xsl:choose>
                               <xsl:when test="$customfind != ''">
-                                    <xsl:sequence select="translate(translate(replace(lower-case(normalize-unicode($input)),$customfind,$customreplace),$punct,''),$ac,$un)"/>
+                                    <xsl:sequence select="translate(
+										translate(
+												replace(
+												         	lower-case(
+		               									                                      normalize-unicode($input)
+															          )
+													    ,$customfind,$customreplace)
+											      ,$punct,'')
+										,$ac,$un)"/>
                               </xsl:when>
                               <xsl:otherwise>
                                     <xsl:sequence select="translate(translate(lower-case(normalize-unicode($input)),$ac,$un),$punct,'')"/>
@@ -57,6 +65,10 @@
       <xsl:function name="cite:word-no-number">
             <xsl:param name="input"/>
             <xsl:sequence select="translate($input,$numbers,'')"/>
+      </xsl:function>
+      <xsl:function name="cite:no-space">
+            <xsl:param name="input"/>
+            <xsl:sequence select="translate($input,' ','')"/>
       </xsl:function>
       <xsl:function name="cite:hom-number">
             <xsl:param name="input"/>

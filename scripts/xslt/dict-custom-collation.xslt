@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
       <!-- Part of the SILP Dictionary Creator
 Used to hold custom collations used in some languages
@@ -8,7 +9,6 @@ Created: 5/08/2012
 Modified: 21/08/2012
 
  -->
-
       <xsl:variable name="customcollation">
             <!--    The input custom collation looks like this:
 '&lt; ā,Ā &lt; a,A &lt; b,B &lt; c,C &lt; d,D &lt; ē,Ē &lt;e,E &lt; f,F &lt; g,G &lt; h,H &lt; ī,Ī &lt; i,I &lt; j,J &lt; k,K &lt; ˈ &lt; l,L &lt; m,M &lt; n,N &lt; ŋ,Ŋ &lt; ō,Ō &lt; o,O &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; ū,Ū &lt; u,U &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z'
@@ -17,13 +17,20 @@ which is inturn changed to:
 by the encode-for-uri() for the url  -->
             <xsl:choose>
                   <xsl:when test="lower-case($collationname) = 'yakan'">
-                        <xsl:text> &lt; 0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9 &lt; ā,Ā &lt; a,A &lt; b,B &lt; c,C &lt; d,D &lt; ē,Ē &lt;e,E &lt; f,F &lt; g,G &lt; h,H &lt; ī,Ī &lt; i,I &lt; j,J &lt; k,K &lt; ˈ &lt; l,L &lt; m,M &lt; n,N &lt; ng,Ng=ŋ,Ŋ &lt; ō,Ō &lt; o,O &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; ū,Ū &lt; u,U &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z </xsl:text><!-- &lt; &#39; &#39; -->
+                        <xsl:text> &lt; 0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9 &lt; ā,Ā &lt; a,A &lt; b,B &lt; c,C &lt; d,D &lt; ē,Ē &lt;e,E &lt; f,F &lt; g,G &lt; h,H &lt; ī,Ī &lt; i,I &lt; j,J &lt; k,K &lt; ˈ &lt; l,L &lt; m,M &lt; n,N &lt; ng,Ng=ŋ,Ŋ &lt; ō,Ō &lt; o,O &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; ū,Ū &lt; u,U &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z </xsl:text>
+                        <!-- &lt; &#39; &#39; -->
                   </xsl:when>
                   <xsl:when test="lower-case($collationname) = 'maranao'">
                         <xsl:text> &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9 &lt; a,A &lt; b,B &lt; c,C &lt; d,D &lt; ae,AE=æ,Æ &lt; e,E &lt; f,F &lt; g,G &lt; h,H &lt; i,I &lt; j,J &lt; k,K &lt; ˈ &lt; l,L &lt; m,M &lt; n,N &lt; ng,Ng=ŋ,Ŋ &lt; o,O &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; u,U &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z &lt; &#39; &#39;</xsl:text>
                   </xsl:when>
                   <xsl:when test="lower-case($collationname) = 'protosama'">
                         <xsl:text> &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9  &lt; a &lt; ʌ &lt; b &lt; d &lt; ʤ &lt; e &lt; ɘ &lt; g &lt; h &lt; i &lt; ɪ &lt; k &lt; ʔ &lt; l &lt; m &lt; n &lt; ŋ &lt; ñ &lt; o &lt; p &lt; r &lt; s &lt; t &lt; ʧ &lt; u &lt; ɤ &lt; w &lt; y &lt; &#39; &#39;</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="lower-case($collationname) = 'aytamagantsi'">
+                        <xsl:text> &#39; &#39; &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9  &lt; a,A,à,á,â &lt; b,B &lt; c,C &lt; d,D &lt; e,E,é,ê,Ê &lt; f,F &lt; g,G &lt; h,H &lt; i,ì,í,î,I &lt; j,J &lt; k,K &lt; l,L &lt; m,M &lt; n,ñ,N &lt; ng,ŋ,Ng,Ŋ &lt; o,O,ò,ó,ô,Ò &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; u,ú,û,U &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="lower-case($collationname) = 'philcommon'">
+                        <xsl:text>&lt; &#39; &#39; &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9  &lt; a,A &lt; ā,Ā &lt; b,B &lt; d,D &lt; e,E &lt; ē,Ē &lt; g,G &lt; h,H &lt; i,I &lt; ī,Ī &lt; k,K &lt; l,L &lt; m,M &lt; n,N &lt; ng,ŋ,Ng,Ŋ &lt; o,O &lt; ō,Ō &lt; p,P &lt; r,R &lt; s,S &lt; t,T &lt; u,U &lt; ū,Ū &lt; w,W &lt; y,Y </xsl:text>
                   </xsl:when>
                   <!-- Add other custome collations here  inside a when -->
                   <xsl:otherwise>

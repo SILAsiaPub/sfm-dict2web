@@ -22,12 +22,12 @@ Modified: 2013-07-09 IKM
                   <xsl:choose>
                         <xsl:when test="$collationname != ''">
                               <xsl:call-template name="customcollationfeedback"/>
-                              <xsl:for-each-group select="record" group-by="cite:custom-first-letter(cite:translateaccents(ie))">
-                                    <xsl:sort collation="http://saxon.sf.net/collation?rules={encode-for-uri($customcollation)}" select="cite:custom-first-letter(cite:translateaccents(ie))"/>
+                              <xsl:for-each-group select="record" group-by="cite:custom-first-letter(ie)">
+                                    <xsl:sort collation="http://saxon.sf.net/collation?rules={encode-for-uri($customcollation)}" select="cite:custom-first-letter(ie)"/>
                                     <xsl:element name="alpha">
                                           <xsl:attribute name="key">
                                                 <!-- <xsl:call-template name="letterkey"/> -->
-                                                <xsl:value-of select="cite:custom-first-letter(cite:translateaccents(ie))"/>
+                                                <xsl:value-of select="cite:custom-first-letter(ie)"/>
                                           </xsl:attribute>
                                           <xsl:apply-templates select="current-group()">
                                                 <xsl:sort collation="http://saxon.sf.net/collation?rules={encode-for-uri($customcollation)}" select="cite:translateaccents(ie)"/>
@@ -43,7 +43,7 @@ Modified: 2013-07-09 IKM
                                     <xsl:sort select="cite:translateaccents(cite:custom-first-letter(ie))"/>
                                     <xsl:element name="alpha">
                                           <xsl:attribute name="key">
-                                                <xsl:value-of select="cite:translateaccents(cite:custom-first-letter(ie))"/>
+                                                <xsl:value-of select="cite:custom-first-letter(ie)"/>
                                           </xsl:attribute>
                                           <xsl:apply-templates select="current-group()">
                                                 <xsl:sort collation="{$default-collation}" select="cite:translateaccents(ie)"/>

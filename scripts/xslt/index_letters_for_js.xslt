@@ -1,5 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-      <xsl:output method="text" omit-xml-declaration="yes"/>
+      <xsl:output method="text" omit-xml-declaration="yes" use-character-maps="silp"/>
       <xsl:param name="spacedlist"/>
       <xsl:variable name="control">
             <xsl:call-template name="list2xml">
@@ -7,6 +7,7 @@
             </xsl:call-template>
       </xsl:variable>
       <xsl:include href='inc-list2xml.xslt'/>
+      <xsl:include href='../../scripts/xslt/inc-char-map-silp.xslt'/>
       <!-- <xsl:include href='../../scripts/xslt/inc-control-list-spaced.xslt'/> -->
       <xsl:template match="/data">
             <xsl:text>// JavaScript Document 

@@ -14,11 +14,19 @@
                   </xsl:non-matching-substring>
             </xsl:analyze-string>
       </xsl:variable> -->
-      <xsl:variable name="ac" select="'àáâãāçèéêëēìíîïɨīùúûüūòóôõöōŏő'"/>
-      <xsl:variable name="un" select="'aaaaaceeeeeiiiiiiuuuuuoooooooo'"/>
+      <xsl:variable name="ac" select="'àáâãāçèéêëēìíîïɨīùúûüūòóôõöōŏőɴ'"/>
+      <xsl:variable name="un" select="'aaaaaceeeeeiiiiiiuuuuuoooooooon'"/>
       <xsl:variable name="numbers" select="'0123456789'"/>
-      <xsl:variable name="or-digraph" select="replace($digraphlist,' ','|')"/>
-      <xsl:variable name="removefromstart">&#34;-(“~\[,‘;&#39;#&#42;&#47;<xsl:value-of select="$removechar" /></xsl:variable>
+      <xsl:variable name="or-digraph">
+            <xsl:choose>
+                  <xsl:when test="string-length($digraphlist) gt 0">
+                        <xsl:value-of select="replace($digraphlist,' ','|')"/>
+                        <xsl:text>|</xsl:text>
+                  </xsl:when>
+                  <xsl:otherwise/>
+            </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="removefromstart">&#34;\-(“~\[,‘;&#39;#&#42;&#47;<xsl:value-of select="$removechar" /></xsl:variable>
       <xsl:include href='inc-list2xml.xslt'/>
       <xsl:variable name="digraphs">
             <xsl:call-template name="list2xml">
@@ -80,24 +88,26 @@
       </xsl:function> -->
       <xsl:function name="cite:custom-first-letter">
             <xsl:param name="input"/>
-            <xsl:variable name="finddigraph" select="concat('^(',$or-digraph,'|\w).*') "/>
+            <xsl:variable name="findletterordigraph" select="concat('^(',$or-digraph,'.).*') "/>
             <xsl:variable name="find" select="'^[\d\*&#47; -]*(\w).*'"/>
-            <xsl:variable name="firstletter">
+            <xsl:variable name="trimmedinput" select="cite:translateaccents($input)"/>
+            <xsl:variable name="firstletterordigraph">
                   <xsl:choose>
-                        <xsl:when test="string-length($digraphs) gt 1">
-                              <xsl:value-of select="replace($input,$finddigraph,'$1')"/>
+                        <xsl:when test="string-length($digraphs) gt 0">
+                              <xsl:value-of select="replace($trimmedinput,$findletterordigraph,'$1')"/>
                         </xsl:when>
                         <xsl:otherwise>
-                              <xsl:value-of select="replace($input,$find,'$1')"/>
+                              <xsl:value-of select="replace($trimmedinput,$find,'$1')"/>
                         </xsl:otherwise>
                   </xsl:choose>
             </xsl:variable>
-            <xsl:sequence select="lower-case($firstletter)"/>
+            <xsl:sequence select="$firstletterordigraph"/>
       </xsl:function>
       <xsl:function name="cite:translateaccents">
             <xsl:param name="input"/>
-            <xsl:variable name="find" select="concat('^[\d\* ',$removefromstart,']*(\w.*)') "/>
-            <xsl:variable name="trimmedinput" select="lower-case(replace($input,$find,'$1'))"/>
+            <xsl:variable name="findnremoveatstart" select="concat('^[\d\* ',$removefromstart,']*(',$or-digraph,'\w)(\w*)') "/>
+            <xsl:variable name="lcinput" select="lower-case($input)"/>
+            <xsl:variable name="trimmedinput" select="replace($lcinput,$findnremoveatstart,'$1$2')"/>
             <xsl:choose>
                   <xsl:when test="$translateaccents = 'yes'">
                         <xsl:sequence select="translate($trimmedinput,$ac,$un)"/>

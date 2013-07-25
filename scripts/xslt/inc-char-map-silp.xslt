@@ -5,6 +5,7 @@
             <xsl:output-character character="ŋ" string='ng'/>
             <xsl:output-character character="ˈ" string="&#39;"/>
             <xsl:output-character character="'" string="&#39;"/>
-           <!-- <xsl:output-character character="#" string="&amp;nbsp;"/>  this messes with all entities # breaks lx.js ouput -->
+            <xsl:output-character character="&#x00AD;" string="&#39;"/>
+            <!-- <xsl:output-character character="#" string="&amp;nbsp;"/>  this messes with all entities # breaks lx.js ouput -->
       </xsl:character-map>
 </xsl:stylesheet>

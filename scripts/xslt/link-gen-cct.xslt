@@ -61,6 +61,7 @@ begin	&gt;	  store(bound) ' ;,.&lt;&gt;()' d51
 		store(eng) u014A u014B
 		store(n) 'Nn'
 		store(omacron) u014C u014D
+		store(ocircumflex) u00DA u00F4
 		store(o) 'Oo'
 		store(p) 'Pp'
 		store(r) 'Rr'
@@ -155,6 +156,9 @@ prec(bound) any(</xsl:text>
                               </xsl:when>
                               <xsl:when test="lower-case($ccstringfirst) = 'ō'">
                                     <xsl:text>omacron</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = 'ô'">
+                                    <xsl:text>ocircumflex</xsl:text>
                               </xsl:when>
                               <xsl:when test="lower-case($ccstringfirst) = 'ū'">
                                     <xsl:text>umacron</xsl:text>

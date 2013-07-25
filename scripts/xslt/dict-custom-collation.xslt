@@ -30,7 +30,7 @@ by the encode-for-uri() for the url  -->
                         <xsl:text> &#39; &#39; &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9  &lt; a,A,à,á,â &lt; b,B &lt; c,C &lt; d,D &lt; e,E,é,ê,Ê &lt; f,F &lt; g,G &lt; h,H &lt; i,ì,í,î,I &lt; j,J &lt; k,K &lt; l,L &lt; m,M &lt; n,ñ,N &lt; ng,ŋ,Ng,Ŋ &lt; o,O,ò,ó,ô,Ò &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; u,ú,û,U &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z</xsl:text>
                   </xsl:when>
                   <xsl:when test="lower-case($collationname) = 'philcommon'">
-                        <xsl:text>&lt; &#39; &#39; &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9  &lt; a,A &lt; ā,Ā &lt; b,B &lt; d,D &lt; e,E &lt; ē,Ē &lt; g,G &lt; h,H &lt; i,I &lt; ī,Ī &lt; k,K &lt; l,L &lt; m,M &lt; n,N,ɴ &lt; ng,ŋ,Ng,Ŋ &lt; o,O &lt; ō,Ō &lt; p,P &lt; r,R &lt; s,S &lt; t,T &lt; u,U &lt; ū,Ū &lt; w,W &lt; y,Y </xsl:text>
+                        <xsl:text>&lt; &#39; &#39; &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9  &lt; a,A &lt; ā,Ā &lt; b,B &lt; c,C &lt; d,D &lt; e,E &lt; ē,Ē &lt; f,F &lt; g,G &lt; h,H &lt; i,I &lt; ī,Ī &lt; j,J &lt; k,K &lt; l,L &lt; m,M &lt; ɴ,n,N &lt; ng,ŋ,Ng,Ŋ &lt; o,O &lt; ō,Ō &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; u,U &lt; ū,Ū &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z &lt; &#x00AD;</xsl:text>
                   </xsl:when>
                   <!-- Add other custome collations here  inside a when -->
                   <xsl:otherwise>

@@ -82,13 +82,13 @@ goto :eof
 
 :setup
 set iso=
-if "%~1" == "" (
+if "%1" == "" (
 SET proj=
-SET /P Choice=Enter iso code: 
+SET /P choice=Enter iso code: 
+set proj=%choice%
 ) else (
 set proj=%1
 )
-
 set basepath=%cd%
 
 echo =============================================

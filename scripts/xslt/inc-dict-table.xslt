@@ -16,7 +16,7 @@
                         </caption>
                   </thead>
                   <tbody>
-                        <xsl:apply-templates select="trow"/>
+                        <xsl:apply-templates select="*"/>
                   </tbody>
             </xsl:element>
       </xsl:template>
@@ -25,6 +25,21 @@
                   <xsl:attribute name="class">
                         <xsl:choose>
                               <xsl:when test="name() = 'td'">
+                                    <xsl:value-of select="concat('c',(position() +1) div 2)"/>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                    <xsl:value-of select="name()"/>
+                              </xsl:otherwise>
+                        </xsl:choose>
+                  </xsl:attribute>
+                  <xsl:apply-templates/>
+            </xsl:element>
+      </xsl:template>
+      <xsl:template match="headrow">
+            <xsl:element name="tr">
+                  <xsl:attribute name="class">
+                        <xsl:choose>
+                              <xsl:when test="name() = 'th'">
                                     <xsl:value-of select="concat('c',(position() +1) div 2)"/>
                               </xsl:when>
                               <xsl:otherwise>

@@ -32,7 +32,11 @@ by the encode-for-uri() for the url  -->
                   <xsl:when test="lower-case($collationname) = 'philcommon'">
                         <xsl:text>&lt; &#39; &#39; &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9  &lt; a,A &lt; ā,Ā &lt; b,B &lt; c,C &lt; d,D &lt; e,E &lt; ē,Ē &lt; f,F &lt; g,G &lt; h,H &lt; i,I &lt; ī,Ī &lt; j,J &lt; k,K &lt; l,L &lt; m,M &lt; ɴ,n,N &lt; ng,ŋ,Ng,Ŋ &lt; o,O &lt; ō,Ō &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; u,U &lt; ū,Ū &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z &lt; &#x00AD;</xsl:text>
                   </xsl:when>
-                  <!-- Add other custome collations here  inside a when -->
+                  <xsl:when test="lower-case($collationname) = 'ayanganifugao'">
+                        <xsl:text>&lt; &#39;&#45;&#39; &lt; &#39; &#39; &lt;  0 &lt; 1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9  &lt; a,A &lt; ā,Ā &lt; b,B &lt; c,C &lt; d,D &lt; e,E &lt; ē,Ē &lt; f,F &lt; g,G &lt; h,H &lt; i,I &lt; ī,Ī &lt; j,J &lt; k,K &lt; l,L &lt; m,M &lt; ɴ,n,N &lt; ng,ŋ,Ng,Ŋ &lt; o,O &lt; ō,Ō &lt; p,P &lt; q,Q &lt; r,R &lt; s,S &lt; t,T &lt; u,U &lt; ū,Ū &lt; v,V &lt; w,W &lt; x,X &lt; y,Y &lt; z,Z &lt; &#x00AD;</xsl:text>
+                  </xsl:when>
+
+                  <!-- Add other custom collations here  inside a when -->
                   <xsl:otherwise>
                         <xsl:text></xsl:text>
                   </xsl:otherwise>

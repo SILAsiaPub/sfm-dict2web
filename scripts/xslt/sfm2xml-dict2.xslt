@@ -67,14 +67,14 @@ Changed table cells to have different names. So instead of td they are c1 c2 c3 
                                                                                                       <!-- split the lines separated by 2 or more space elements -->
                                                                                                       <xsl:matching-substring/>
                                                                                                       <xsl:non-matching-substring>
-                                                                                                            <xsl:element name="c{(position() + 1) div 2}">
+                                                                                                            <xsl:element name="c{floor((position() + 1) div 2)}">
                                                                                                                   <!-- Output all data elements -->
                                                                                                                   <xsl:value-of select="normalize-space(.)"/>
                                                                                                             </xsl:element>
                                                                                                       </xsl:non-matching-substring>
                                                                                                 </xsl:analyze-string>
-                                                                                                <xsl:value-of select="normalize-space(.)"/>
-                                                                                                <!-- just keep the title part of the line not the bar codes or surrounding space-->
+                                                                                                <!-- <xsl:value-of select="normalize-space(.)"/>
+                                                                                                just keep the title part of the line not the bar codes or surrounding space-->
                                                                                           </xsl:element>
                                                                                     </xsl:if>
                                                                               </xsl:when>
@@ -87,7 +87,7 @@ Changed table cells to have different names. So instead of td they are c1 c2 c3 
                                                                                                 <!-- split the lines separated by 2 or more space elements -->
                                                                                                 <xsl:matching-substring/>
                                                                                                 <xsl:non-matching-substring>
-                                                                                                      <xsl:element name="c{(position() + 1) div 2}">
+                                                                                                      <xsl:element name="c{floor((position() + 1) div 2)}">
                                                                                                             <!-- Output all data elements -->
                                                                                                             <xsl:value-of select="normalize-space(.)"/>
                                                                                                       </xsl:element>

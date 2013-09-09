@@ -72,7 +72,9 @@ begin	&gt;	  store(bound) ' ;,.&lt;&gt;()' d51
 		store(w) 'Ww'
 		store(y) 'Yy'
 		store(dash) '-'
-
+		store(squareLbracket) '['
+		store(roundLbracket) '('
+		store(pipe) '|'
 		store(star) '*'
 		
 			endstore use(main)
@@ -172,9 +174,22 @@ prec(bound) any(</xsl:text>
                               <xsl:when test="lower-case($ccstringfirst) = '-'">
                                     <xsl:text>dash</xsl:text>
                               </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = '|'">
+                                    <xsl:text>pipe</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = '['">
+                                    <xsl:text>squareLbracket</xsl:text>
+                              </xsl:when>
+                              <xsl:when test="lower-case($ccstringfirst) = '('">
+                                    <xsl:text>roundLbracket</xsl:text>
+                              </xsl:when>
                               <xsl:otherwise>
                                     <xsl:value-of select="lower-case($ccstringfirst)"/>
                               </xsl:otherwise>
+<!-- 		store(squareLbracket) '['
+		store(roundLbracket) '('
+		store(pipe) '|'
+		store(star) '*' -->
                         </xsl:choose>
                         <xsl:text>) "</xsl:text>
                         <xsl:value-of select="lower-case($ccstringrest)"/>

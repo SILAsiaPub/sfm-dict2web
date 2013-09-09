@@ -82,12 +82,12 @@ goto :eof
 :sfm2xml
 :: created 2012-08-14 by Ian McQuay
 set report=SFM file converted to XML
-call file2uri %~1
-
+rem call file2uri %~1
+set sourcetext=%~1
 set infile=%basepath%\%xsltpath%\blank.xml
 set outfile=%xmlpath%\%iso%-flat.xml
-set script=%basepath%\%xsltpath%\sfm2xml-dict2.xslt
-set param=sourcetexturi=%uri% tablemarker=%~2
+set script=%basepath%\%xsltpath%\sfm2xml-dict3.xslt
+set param=sourcetext="%sourcetext%" tablemarker=%~2
 call build-func xslt
 goto:eof
 

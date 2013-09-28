@@ -1,6 +1,6 @@
 <!--
     #############################################################
-    # Name:         .xslt
+    # Name:         generic-add-preceding-to-group.xslt
     # Purpose:	adds preceding adjacent node to group if that node exists.
     # Part of:      Vimod Pub - http://projects.palaso.org/projects/vimod-pub
     # Author:       Ian McQuay <ian_mcquay.org>
